@@ -1,2 +1,1 @@
-# local-roots
-capstone app
+# Capstone project
