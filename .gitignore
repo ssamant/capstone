@@ -1,3 +1,9 @@
+*.pyc
+*~
+__pycache__
 capstone_concepts.md
 capstone_product_plan.md
 /local-roots-venv
+/static
+db.sqlite3
+.DS_STORE
