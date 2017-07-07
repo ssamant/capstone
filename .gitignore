@@ -1,9 +1,11 @@
 *.pyc
-*~
+~*
+django-notes-2017*
 __pycache__
 capstone_concepts.md
 capstone_product_plan.md
 /local-roots-venv
 /static
+/notebook
 db.sqlite3
 .DS_STORE
