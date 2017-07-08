@@ -1,0 +1,411 @@
+[
+{
+  "model": "farm_site.season",
+  "pk": 1,
+  "fields": {
+    "year": "2017"
+  }
+},
+
+{
+  "model": "farm_site.season",
+  "pk": 2,
+  "fields": {
+    "year": "2016"
+  }
+},
+
+{
+  "model": "farm_site.season",
+  "pk": 3,
+  "fields": {
+    "year": "2015"
+  }
+},
+
+{
+  "model": "farm_site.season",
+  "pk": 4,
+  "fields": {
+    "year": "2014"}
+  },
+
+  {
+    "model": "farm_site.season",
+    "pk": 5,
+    "fields": {
+      "year": "2013"
+    }
+  },
+
+
+{
+  "model": "farm_site.location",
+  "pk": 1,
+  "fields": {
+    "name": "Capitol Hill",
+    "street_address": "752 Boylston Ave E",
+    "city": "Seattle",
+    "state": "WA",
+    "zipcode": "98102"
+  }
+},
+
+{
+  "model": "farm_site.location",
+  "pk": 2,
+  "fields": {
+    "name": "Columbia City",
+    "street_address": "4865 Rainier Ave S",
+    "city": "Seattle",
+    "state": "WA",
+    "zipcode": "98118"
+  }
+},
+
+{
+  "model": "farm_site.location",
+  "pk": 3,
+  "fields": {
+    "name": "Duvall",
+    "street_address": "11707 262nd Ave NE",
+    "city": "Duvall",
+    "state": "WA",
+    "zipcode": "98019"
+  }
+},
+
+{
+  "model": "farm_site.location",
+  "pk": 4,
+  "fields": {
+    "name": "Magnolia",
+    "street_address": "3830 34th Ave W",
+    "city": "Seattle",
+    "state": "WA",
+    "zipcode": "98199"
+  }
+},
+
+{
+  "model": "farm_site.location",
+  "pk": 5,
+  "fields": {
+    "name": "Northeast Seattle",
+    "street_address": "5440 Sand Point Way NE",
+    "city": "Seattle",
+    "state": "WA",
+    "zipcode": "98105"
+  }
+},
+
+{
+  "model": "farm_site.location",
+  "pk": 6,
+  "fields": {
+    "name": "Woodinville",
+    "street_address": "13780 NE 175th St Ste 104",
+    "city": "Woodinville",
+    "state": "WA",
+    "zipcode": "98072"
+  }
+},
+
+{
+  "model": "farm_site.member",
+  "pk": 1,
+  "fields": {
+    "first_name": "Sai",
+    "last_name": "Samant",
+    "email": "sai@sai.com",
+    "street_address": "6006 37th Ave NE",
+    "city": "Seattle",
+    "state": "WA",
+    "zipcode": "98115",
+    "phone": "206-555-5555",
+    "created_date": "2017-07-06T21:20:52Z"
+  }
+},
+
+{
+  "model": "farm_site.member",
+  "pk": 2,
+  "fields": {
+    "first_name": "Taylor",
+    "last_name": "Rielly",
+    "email": "taylor@taylor.com",
+    "street_address":
+    "6006 37th Ave NE",
+    "city": "Seattle",
+    "state": "WA",
+    "zipcode": "98115",
+    "phone": "206-555-5555",
+    "created_date": "2017-07-07T16:59:38Z"
+  }
+},
+
+{
+  "model": "farm_site.member",
+  "pk": 3,
+  "fields": {
+    "first_name": "Hillary",
+    "last_name": "Fisher",
+    "email": "hillary@hillary.com",
+    "street_address": "290 E. Broadway",
+    "city": "Seattle",
+    "state": "WA",
+    "zipcode": "98102",
+    "phone": "206-555-5555",
+    "created_date": "2017-07-07T17:00:00Z"
+  }
+},
+
+{
+  "model": "farm_site.member",
+  "pk": 4,
+  "fields": {
+    "first_name": "Bill",
+    "last_name": "Murray",
+    "email": "groundhog@bill.com",
+    "street_address": "403 N. 36th St",
+    "city": "Seattle",
+    "state": "WA",
+    "zipcode": "98103",
+    "phone": "206-555-5555",
+    "created_date": "2017-07-07T17:01:02Z"
+  }
+},
+
+{
+  "model": "farm_site.member",
+  "pk": 5,
+  "fields": {
+    "first_name": "Mindy",
+    "last_name": "Kaling",
+    "email": "lahiri@mindy.com",
+    "street_address": "405 NE 71st St",
+    "city": "Seattle",
+    "state": "WA",
+    "zipcode": "98115",
+    "phone": "206-555-5555",
+    "created_date": "2017-07-07T17:01:52Z"
+  }
+},
+
+{
+  "model": "farm_site.member",
+  "pk": 6,
+  "fields": {
+    "first_name": "Dory",
+    "last_name": "Fantasmagory",
+    "email": "dory@dory.com",
+    "street_address": "4711 California Ave SW",
+    "city": "Seattle",
+    "state": "WA",
+    "zipcode": "98116",
+    "phone": "206-555-5555",
+    "created_date": "2017-07-07T17:02:31Z"
+  }
+},
+
+{
+  "model": "farm_site.member",
+  "pk": 7,
+  "fields": {
+    "first_name": "Lucy",
+    "last_name": "Grobble Gracker",
+    "email": "grobble@gracker.com",
+    "street_address": "500 NW 65th St",
+    "city": "Seattle",
+    "state": "WA",
+    "zipcode": "98117",
+    "phone": "206-555-5555",
+    "created_date": "2017-07-07T17:03:27Z"
+  }
+},
+
+{
+  "model": "farm_site.member",
+  "pk": 8,
+  "fields": {
+    "first_name": "Percy",
+    "last_name": "Jackson",
+    "email": "percy@jackson.com",
+    "street_address": "7504 Aurora Ave N",
+    "city": "Seattle",
+    "state": "WA",
+    "zipcode": "98103",
+    "phone": "206-555-5555",
+    "created_date": "2017-07-07T17:04:08Z"
+  }
+},
+
+{
+  "model": "farm_site.member",
+  "pk": 9,
+  "fields": {
+    "first_name": "Magnus",
+    "last_name": "Chase",
+    "email": "magnus@chase.com",
+    "street_address": "10718 NE 68th St",
+    "city": "Kirkland",
+    "state": "WA",
+    "zipcode": "98033",
+    "phone": "206-555-5555",
+    "created_date": "2017-07-07T17:04:48Z"
+  }
+},
+
+{
+  "model": "farm_site.member",
+  "pk": 10,
+  "fields": {
+    "first_name": "Harry",
+    "last_name": "Potter",
+    "email": "harry@gryffindor.com",
+    "street_address": "450 NE 71st St",
+    "city": "Seattle",
+    "state": "WA",
+    "zipcode": "98115",
+    "phone": "206-555-5555",
+    "created_date": "2017-07-07T17:05:17Z"
+  }
+},
+
+{
+  "model": "farm_site.member",
+  "pk": 11,
+  "fields": {
+    "first_name": "Hermione",
+    "last_name": "Granger",
+    "email": "herminoe@gryffindor.com",
+    "street_address": "6514 40th Ave NE",
+    "city": "Seattle",
+    "state": "WA",
+    "zipcode": "98115",
+    "phone": "206-555-5555",
+    "created_date": "2017-07-07T17:05:44Z"
+  }
+},
+
+{
+  "model": "farm_site.member",
+  "pk": 12,
+  "fields": {
+    "first_name": "Ronald",
+    "last_name": "Weasley",
+    "email": "ron@gryffindor.com",
+    "street_address": "1810 12th Ave NW",
+    "city": "Issaquah",
+    "state": "WA",
+    "zipcode": "98027",
+    "phone": "206-555-5555",
+    "created_date": "2017-07-07T17:06:17Z"
+  }
+},
+
+{
+  "model": "farm_site.member",
+  "pk": 13,
+  "fields": {
+    "first_name": "Cho",
+    "last_name": "Chang",
+    "email": "cho@ravenclaw.com",
+    "street_address": "11435 Avondale Rd NE",
+    "city": "Redmond",
+    "state": "WA",
+    "zipcode": "98052",
+    "phone": "206-555-5555",
+    "created_date": "2017-07-07T17:06:57Z"
+  }
+},
+
+{
+  "model": "farm_site.member",
+  "pk": 14,
+  "fields": {
+    "first_name": "Ginny",
+    "last_name": "Weasley",
+    "email": "ginny@gryffindor.com",
+    "street_address": "3131 Elliott Ave #500",
+    "city": "Seattle",
+    "state": "WA",
+    "zipcode": "98121",
+    "phone": "206-555-5555",
+    "created_date": "2017-07-07T17:07:37Z"
+  }
+},
+
+{
+  "model": "farm_site.member",
+  "pk": 15,
+  "fields": {
+    "first_name": "Parvati",
+    "last_name": "Patel",
+    "email": "parvati@gryffindor.com",
+    "street_address": "3610 S Edmunds St",
+    "city": "Seattle",
+    "state": "WA",
+    "zipcode": "98118",
+    "phone": "206-555-5555",
+    "created_date": "2017-07-07T17:08:08Z"
+  }
+},
+
+{
+  "model": "farm_site.member",
+  "pk": 16,
+  "fields": {
+    "first_name": "Iggy",
+    "last_name": "Peck",
+    "email": "iggy@architect.com",
+    "street_address": "2707 Rainier Ave S",
+    "city": "Seattle",
+    "state": "WA",
+    "zipcode": "98144",
+    "phone": "206-555-5555",
+    "created_date": "2017-07-07T17:20:08Z"
+  }
+},
+
+{
+  "model": "farm_site.member",
+  "pk": 17,
+  "fields": {
+    "first_name": "Rosie",
+    "last_name": "Revere",
+    "email": "rosie@engineer.com",
+    "street_address": "7823 SE 28th St",
+    "city": "Mercer Island",
+    "state": "WA",
+    "zipcode": "98040",
+    "phone": "206-555-5555",
+    "created_date": "2017-07-07T17:21:20Z"
+  }
+},
+
+{
+  "model": "farm_site.member",
+  "pk": 18,
+  "fields": {
+    "first_name": "Ada",
+    "last_name": "Twist",
+    "email": "ada@scientist.com",
+    "street_address": "500 Mercer St",
+    "city": "Seattle",
+    "state": "WA",
+    "zipcode": "98109",
+    "phone": "206-555-5555",
+    "created_date": "2017-07-07T17:21:50Z"
+  }
+},
+
+{
+  "model":"farm_site.signup",
+  "pk": 1,
+  "fields": {
+    "member": 4,
+    "location": 3,
+    "season": 1}
+}
+]
