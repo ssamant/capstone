@@ -16,5 +16,9 @@ def dashboard(request):
 
 
 def locations(request):
-    locations = Location.objects.all
+    locations = Location.objects.filter(current=True)
     return render(request, 'farm_site/locations.html', {'locations': locations})
+
+def signups(request):
+    signups = Signup.objects.all
+    return render(request, 'farm_site/signups.html', {'signups': signups})

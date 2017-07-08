@@ -1,4 +1,9 @@
+{% extends 'farm_site/base.html' %}
+
+{% block content %}
 <h1>Locations</h1>
   {% for location in locations %}
-      <p>{{ location.name}}</p>    
+      <p>{{ location.name}}</p>
   {% endfor %}
+
+{% endblock %}
