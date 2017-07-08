@@ -1,13 +1,15 @@
 [
+
   {
     "model": "farm_site.location",
     "pk": 1,
     "fields": {
-      "name": "Capitol Hill",
+      "name": "Capitol Hill (Aloha and Boylston)",
       "street_address": "752 Boylston Ave E",
       "city": "Seattle",
       "state": "WA",
-      "zipcode": "98102"
+      "zipcode": "98102",
+      "current": "True"
     }
   },
 
@@ -19,7 +21,8 @@
       "street_address": "4865 Rainier Ave S",
       "city": "Seattle",
       "state": "WA",
-      "zipcode": "98118"
+      "zipcode": "98118",
+      "current": "True"
     }
   },
 
@@ -31,7 +34,8 @@
       "street_address": "11707 262nd Ave NE",
       "city": "Duvall",
       "state": "WA",
-      "zipcode": "98019"
+      "zipcode": "98019",
+      "current": "True"
     }
   },
 
@@ -43,7 +47,8 @@
       "street_address": "3830 34th Ave W",
       "city": "Seattle",
       "state": "WA",
-      "zipcode": "98199"
+      "zipcode": "98199",
+      "current": "True"
     }
   },
 
@@ -55,7 +60,8 @@
       "street_address": "5440 Sand Point Way NE",
       "city": "Seattle",
       "state": "WA",
-      "zipcode": "98105"
+      "zipcode": "98105",
+      "current": "True"
     }
   },
 
@@ -67,7 +73,139 @@
       "street_address": "13780 NE 175th St Ste 104",
       "city": "Woodinville",
       "state": "WA",
-      "zipcode": "98072"
+      "zipcode": "98072",
+      "current": "False"
+    }
+  },
+
+  {
+    "model": "farm_site.location",
+    "pk": 7,
+    "fields": {
+      "name": "Madison Valley",
+      "street_address": "2701 E Madison St",
+      "city": "Seattle",
+      "state": "WA",
+      "zipcode": "98112",
+      "current": "True"
+    }
+  },
+
+  {
+    "model": "farm_site.location",
+    "pk": 8,
+    "fields": {
+      "name": "Rainier Valley",
+      "street_address": "7300 Rainier Ave S",
+      "city": "Seattle",
+      "state": "WA",
+      "zipcode": "98118",
+      "current": "True"
+    }
+  },
+
+  {
+    "model": "farm_site.location",
+    "pk": 9,
+    "fields": {
+      "name": "Queen Anne",
+      "street_address": "2129 Queen Anne Ave N",
+      "city": "Seattle",
+      "state": "WA",
+      "zipcode": "98109",
+      "current": "True"
+    }
+  },
+
+  {
+    "model": "farm_site.location",
+    "pk": 10,
+    "fields": {
+      "name": "Wallingford",
+      "street_address": "1911 N 45th St",
+      "city": "Seattle",
+      "state": "WA",
+      "zipcode": "98103",
+       "current": "True"
+    }
+  },
+
+  {
+    "model": "farm_site.location",
+    "pk": 11,
+    "fields": {
+      "name": "Maple Leaf",
+      "street_address": "8926 Roosevelt Way NE",
+      "city": "Seattle",
+      "state": "WA",
+      "zipcode": "98115",
+      "current": "True"
+    }
+  },
+
+  {
+    "model": "farm_site.location",
+    "pk": 12,
+    "fields": {
+      "name": "Phinney Ridge",
+      "street_address": "7400 Greenwood Ave N",
+      "city": "Seattle",
+      "state": "WA",
+      "zipcode": "98103",
+      "current": "True"
+    }
+  },
+
+  {
+    "model": "farm_site.location",
+    "pk": 13,
+    "fields": {
+      "name": "Ballard",
+      "street_address": "1418 NW 70th St",
+      "city": "Seattle",
+      "state": "WA",
+      "zipcode": "98117",
+      "current": "True"
+    }
+  },
+
+  {
+    "model": "farm_site.location",
+    "pk": 14,
+    "fields": {
+      "name": "West Seattle",
+      "street_address": "4737 California Ave SW",
+      "city": "Seattle",
+      "state": "WA",
+      "zipcode": "98116",
+      "current": "True"
+    }
+  },
+
+  {
+    "model": "farm_site.location",
+    "pk": 15,
+    "fields": {
+      "name": "Downtown Seattle",
+      "street_address": "1215 4th Ave",
+      "city": "Seattle",
+      "state": "WA",
+      "zipcode": "98161",
+      "current": "False"
+    }
+  },
+
+  {
+    "model": "farm_site.location",
+    "pk": 16,
+    "fields": {
+      "name": "Capitol Hill (17th and Galer)",
+      "street_address": "1501 17th Ave E",
+      "city": "Seattle",
+      "state": "WA",
+      "zipcode": "98112",
+      "current": "True"
     }
   }
+
 ]

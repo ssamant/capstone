@@ -21,10 +21,10 @@
   "pk": 2,
   "fields": {
     "first_name": "Taylor",
-    "last_name": "Rielly",
-    "email": "taylor@taylor.com",
+    "last_name": "Swift",
+    "email": "taylor@swift.com",
     "street_address":
-    "6006 37th Ave NE",
+    "6006 36th Ave NE",
     "city": "Seattle",
     "state": "WA",
     "zipcode": "98115",
@@ -289,7 +289,276 @@
   }
 },
 
+{
+  "model": "farm_site.member",
+  "pk": 19,
+  "fields": {
+    "first_name": "Sirius",
+    "last_name": "Black",
+    "email": "sirius@gryffindor.com",
+    "street_address": "3404 NE 55th St",
+    "city": "Seattle",
+    "state": "WA",
+    "zipcode": "98105",
+    "phone": "206-555-5555",
+    "created_date": "2017-07-07T17:21:50Z"
+  }
+},
 
+{
+  "model": "farm_site.member",
+  "pk": 20,
+  "fields": {
+    "first_name": "Remus",
+    "last_name": "Lupin",
+    "email": "remus@gryffindor.com",
+    "street_address": "17171 Bothell Way NE",
+    "city": "Seattle",
+    "state": "WA",
+    "zipcode": "98155",
+    "phone": "206-555-5555",
+    "created_date": "2017-07-07T17:21:50Z"
+  }
+},
 
+{
+  "model": "farm_site.member",
+  "pk": 21,
+  "fields": {
+    "first_name": "Bathilda",
+    "last_name": "Bagshot",
+    "email": "bathilda@hostory.com",
+    "street_address": "6504 20th Ave NE",
+    "city": "Seattle",
+    "state": "WA",
+    "zipcode": "98115",
+    "phone": "206-555-5555",
+    "created_date": "2017-07-07T17:21:50Z"
+  }
+},
+
+{
+  "model": "farm_site.member",
+  "pk": 22,
+  "fields": {
+    "first_name": "Minerva",
+    "last_name": "McGonagall",
+    "email": "mcgonagall@gryffindor.com",
+    "street_address": "5041 Wilson Ave S",
+    "city": "Seattle",
+    "state": "WA",
+    "zipcode": "98118",
+    "phone": "206-555-5555",
+    "created_date": "2017-07-07T17:21:50Z"
+  }
+},
+
+{
+  "model": "farm_site.member",
+  "pk": 23,
+  "fields": {
+    "first_name": "Severus",
+    "last_name": "Snape",
+    "email": "potions@dungeon.com",
+    "street_address": "11728 Aurora Ave N",
+    "city": "Seattle",
+    "state": "WA",
+    "zipcode": "98133",
+    "phone": "206-555-5555",
+    "created_date": "2017-07-07T17:21:50Z"
+  }
+},
+
+{
+  "model": "farm_site.member",
+  "pk": 24,
+  "fields": {
+    "first_name": "Maxime",
+    "last_name": "Black",
+    "email": "notagiant@beauxbatons.com",
+    "street_address": "6416 15th Ave NW",
+    "city": "Seattle",
+    "state": "WA",
+    "zipcode": "98107",
+    "phone": "206-555-5555",
+    "created_date": "2017-07-07T17:21:50Z"
+  }
+},
+
+{
+  "model": "farm_site.member",
+  "pk": 25,
+  "fields": {
+    "first_name": "Rubeus",
+    "last_name": "Hagrid",
+    "email": "hagrid@gameskeeper.com",
+    "street_address": "5314 15th Ave NW",
+    "city": "Seattle",
+    "state": "WA",
+    "zipcode": "98107",
+    "phone": "206-555-5555",
+    "created_date": "2017-07-07T17:21:50Z"
+  }
+},
+
+{
+  "model": "farm_site.member",
+  "pk": 26,
+  "fields": {
+    "first_name": "Molly",
+    "last_name": "Weasley",
+    "email": "molly@theburrow.com",
+    "street_address": "1021 Occidental Ave S",
+    "city": "Seattle",
+    "state": "WA",
+    "zipcode": "98104",
+    "phone": "206-555-5555",
+    "created_date": "2017-07-07T17:21:50Z"
+  }
+},
+
+{
+  "model": "farm_site.member",
+  "pk": 27,
+  "fields": {
+    "first_name": "Ramona",
+    "last_name": "Quimby",
+    "email": "ramona@cleary.com",
+    "street_address": "3404 NE 55th St",
+    "city": "Seattle",
+    "state": "WA",
+    "zipcode": "98105",
+    "phone": "206-555-5555",
+    "created_date": "2017-07-07T17:21:50Z"
+  }
+},
+
+{
+  "model": "farm_site.member",
+  "pk": 28,
+  "fields": {
+    "first_name": "Henry",
+    "last_name": "Huggins",
+    "email": "henry@cleary.com",
+    "street_address": "137 15th Ave E",
+    "city": "Seattle",
+    "state": "WA",
+    "zipcode": "98112",
+    "phone": "206-555-5555",
+    "created_date": "2017-07-07T17:21:50Z"
+  }
+},
+
+{
+  "model": "farm_site.member",
+  "pk": 29,
+  "fields": {
+    "first_name": "Ellen",
+    "last_name": "Tibbits",
+    "email": "ellen@cleary.com",
+    "street_address": "4529 University Way NE",
+    "city": "Seattle",
+    "state": "WA",
+    "zipcode": "98105",
+    "phone": "206-555-5555",
+    "created_date": "2017-07-07T17:21:50Z"
+  }
+},
+
+{
+  "model": "farm_site.member",
+  "pk": 30,
+  "fields": {
+    "first_name": "Dev",
+    "last_name": "Shah",
+    "email": "dev@mon.com",
+    "street_address": "4003 Stone Way N",
+    "city": "Seattle",
+    "state": "WA",
+    "zipcode": "98103",
+    "phone": "206-555-5555",
+    "created_date": "2017-07-07T17:21:50Z"
+  }
+},
+
+{
+  "model": "farm_site.member",
+  "pk": 31,
+  "fields": {
+    "first_name": "Arnold",
+    "last_name": "Baumheiser",
+    "email": "arnold@mon.com",
+    "street_address": "550 Queen Anne Ave N",
+    "city": "Seattle",
+    "state": "WA",
+    "zipcode": "98109",
+    "phone": "206-555-5555",
+    "created_date": "2017-07-07T17:21:50Z"
+  }
+},
+
+{
+  "model": "farm_site.member",
+  "pk": 32,
+  "fields": {
+    "first_name": "Denise",
+    "last_name": "Denise",
+    "email": "sirius@gryffindor.com",
+    "street_address": "1614 W Dravus St",
+    "city": "Seattle",
+    "state": "WA",
+    "zipcode": "98119",
+    "phone": "206-555-5555",
+    "created_date": "2017-07-07T17:21:50Z"
+  }
+},
+
+{
+  "model": "farm_site.member",
+  "pk": 33,
+  "fields": {
+    "first_name": "Jessica",
+    "last_name": "Huang",
+    "email": "jessica@fob.com",
+    "street_address": "3015 E Madison St",
+    "city": "Seattle",
+    "state": "WA",
+    "zipcode": "98112",
+    "phone": "206-555-5555",
+    "created_date": "2017-07-07T17:21:50Z"
+  }
+},
+
+{
+  "model": "farm_site.member",
+  "pk": 34,
+  "fields": {
+    "first_name": "Eddie",
+    "last_name": "Huang",
+    "email": "eddie@fob.com",
+    "street_address": "2400 10th Ave E",
+    "city": "Seattle",
+    "state": "WA",
+    "zipcode": "98102",
+    "phone": "206-555-5555",
+    "created_date": "2017-07-07T17:21:50Z"
+  }
+},
+
+{
+  "model": "farm_site.member",
+  "pk": 35,
+  "fields": {
+    "first_name": "Jon",
+    "last_name": "Snow",
+    "email": "jon@got.com",
+    "street_address": "913 E Pike St",
+    "city": "Seattle",
+    "state": "WA",
+    "zipcode": "98122",
+    "phone": "206-555-5555",
+    "created_date": "2017-07-07T17:21:50Z"
+  }
+}
 
 ]

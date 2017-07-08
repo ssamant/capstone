@@ -4,7 +4,7 @@
     "pk": 1,
     "fields": {
       "member": 1,
-      "location": 3,
+      "location": 5,
       "season": 1}
   },
 
@@ -12,87 +12,23 @@
     "model":"farm_site.signup",
     "pk": 2,
     "fields": {
-      "member": 2,
-      "location": 2,
-      "season": 1}
+      "member": 1,
+      "location": 5,
+      "season": 2}
   },
 
   {
     "model":"farm_site.signup",
     "pk": 3,
     "fields": {
-      "member": 3,
-      "location": 2,
-      "season": 1}
-  },
-
-
-  {
-    "model":"farm_site.signup",
-    "pk": 4,
-    "fields": {
-      "member": 4,
-      "location": 3,
-      "season": 1}
-  },
-
-  {
-    "model":"farm_site.signup",
-    "pk": 5,
-    "fields": {
-      "member": 5,
-      "location": 3,
-      "season": 1}
-  },
-
-  {
-    "model":"farm_site.signup",
-    "pk": 6,
-    "fields": {
-      "member": 5,
-      "location": 3,
-      "season": 2}
-  },
-
-  {
-    "model":"farm_site.signup",
-    "pk": 7,
-    "fields": {
-      "member": 6,
-      "location": 2,
-      "season": 1}
-  },
-
-  {
-    "model":"farm_site.signup",
-    "pk": 8,
-    "fields": {
-      "member": 6,
-      "location": 3,
-      "season": 2}
-  },
-
-  {
-    "model":"farm_site.signup",
-    "pk": 9,
-    "fields": {
       "member": 1,
-      "location": 5,
-      "season": 2}
-  },
-
-  {
-    "model":"farm_site.signup",
-    "pk": 10,
-    "fields": {
-      "member": 1,
-      "location": 5,
+      "location": 4,
       "season": 3}
   },
 
   {
     "model":"farm_site.signup",
-    "pk": 11,
+    "pk": 4,
     "fields": {
       "member": 1,
       "location": 5,
@@ -101,7 +37,7 @@
 
   {
     "model":"farm_site.signup",
-    "pk": 12,
+    "pk": 5,
     "fields": {
       "member": 1,
       "location": 5,
@@ -110,20 +46,723 @@
 
   {
     "model":"farm_site.signup",
+    "pk": 6,
+    "fields": {
+      "member": 2,
+      "location": 8,
+      "season": 1}
+  },
+
+  {
+    "model":"farm_site.signup",
+    "pk": 7,
+    "fields": {
+      "member": 2,
+      "location": 8,
+      "season": 2}
+  },
+
+  {
+    "model":"farm_site.signup",
+    "pk": 8,
+    "fields": {
+      "member": 2,
+      "location": 8,
+      "season": 4}
+  },
+
+  {
+    "model":"farm_site.signup",
+    "pk": 9,
+    "fields": {
+      "member": 3,
+      "location": 11,
+      "season": 1}
+  },
+
+  {
+    "model":"farm_site.signup",
+    "pk": 10,
+    "fields": {
+      "member": 3,
+      "location": 11,
+      "season": 3}
+  },
+
+  {
+    "model":"farm_site.signup",
+    "pk": 11,
+    "fields": {
+      "member": 3,
+      "location": 11,
+      "season": 4}
+  },
+
+  {
+    "model":"farm_site.signup",
+    "pk": 12,
+    "fields": {
+      "member": 4,
+      "location": 6,
+      "season": 1}
+  },
+
+  {
+    "model":"farm_site.signup",
     "pk": 13,
     "fields": {
-      "member": 5,
-      "location": 3,
-      "season": 3}
+      "member": 4,
+      "location": 6,
+      "season": 2}
   },
 
   {
     "model":"farm_site.signup",
     "pk": 14,
     "fields": {
+      "member": 4,
+      "location": 6,
+      "season": 3}
+  },
+
+  {
+    "model":"farm_site.signup",
+    "pk": 15,
+    "fields": {
+      "member": 4,
+      "location": 6,
+      "season": 4}
+  },
+
+  {
+    "model":"farm_site.signup",
+    "pk": 16,
+    "fields": {
+      "member": 4,
+      "location": 6,
+      "season": 5}
+  },
+
+  {
+    "model":"farm_site.signup",
+    "pk": 12,
+    "fields": {
       "member": 5,
+      "location": 9,
+      "season": 1}
+  },
+
+  {
+    "model":"farm_site.signup",
+    "pk": 13,
+    "fields": {
+      "member": 5,
+      "location": 9,
+      "season": 2}
+  },
+
+  {
+    "model":"farm_site.signup",
+    "pk": 14,
+    "fields": {
+      "member": 6,
+      "location": 13,
+      "season": 1}
+  },
+
+  {
+    "model":"farm_site.signup",
+    "pk": 15,
+    "fields": {
+      "member": 6,
+      "location": 13,
+      "season": 2}
+  },
+
+  {
+    "model":"farm_site.signup",
+    "pk": 16,
+    "fields": {
+      "member": 6,
+      "location": 13,
+      "season": 3}
+  },
+
+  {
+    "model":"farm_site.signup",
+    "pk": 17,
+    "fields": {
+      "member": 6,
+      "location": 13,
+      "season": 4}
+  },
+
+  {
+    "model":"farm_site.signup",
+    "pk": 18,
+    "fields": {
+      "member": 6,
+      "location": 13,
+      "season": 5}
+  },
+
+  {
+    "model":"farm_site.signup",
+    "pk": 19,
+    "fields": {
+      "member": 7,
+      "location": 2,
+      "season": 1}
+  },
+
+  {
+    "model":"farm_site.signup",
+    "pk": 20,
+    "fields": {
+      "member": 7,
+      "location": 2,
+      "season": 3}
+  },
+
+  {
+    "model":"farm_site.signup",
+    "pk": 21,
+    "fields": {
+      "member": 8,
+      "location": 4,
+      "season": 1}
+  },
+
+  {
+    "model":"farm_site.signup",
+    "pk": 22,
+    "fields": {
+      "member": 8,
+      "location": 4,
+      "season": 2}
+  },
+
+  {
+    "model":"farm_site.signup",
+    "pk": 23,
+    "fields": {
+      "member": 8,
+      "location": 4,
+      "season": 3}
+  },
+
+  {
+    "model":"farm_site.signup",
+    "pk": 24,
+    "fields": {
+      "member": 8,
+      "location": 4,
+      "season": 4}
+  },
+
+  {
+    "model":"farm_site.signup",
+    "pk": 25,
+    "fields": {
+      "member": 8,
+      "location": 4,
+      "season": 5}
+  },
+
+  {
+    "model":"farm_site.signup",
+    "pk": 26,
+    "fields": {
+      "member": 9,
+      "location": 14,
+      "season": 2}
+  },
+
+  {
+    "model":"farm_site.signup",
+    "pk": 27,
+    "fields": {
+      "member": 9,
+      "location": 14,
+      "season": 3}
+  },
+
+  {
+    "model":"farm_site.signup",
+    "pk": 28,
+    "fields": {
+      "member": 9,
+      "location": 14,
+      "season": 4}
+  },
+
+  {
+    "model":"farm_site.signup",
+    "pk": 29,
+    "fields": {
+      "member": 9,
+      "location": 14,
+      "season": 5}
+  },
+
+  {
+    "model":"farm_site.signup",
+    "pk": 30,
+    "fields": {
+      "member": 10,
+      "location": 13,
+      "season": 1}
+  },
+
+  {
+    "model":"farm_site.signup",
+    "pk": 31,
+    "fields": {
+      "member": 10,
+      "location": 13,
+      "season": 2}
+  },
+
+  {
+    "model":"farm_site.signup",
+    "pk": 32,
+    "fields": {
+      "member": 10,
+      "location": 13,
+      "season": 3}
+  },
+
+  {
+    "model":"farm_site.signup",
+    "pk": 33,
+    "fields": {
+      "member": 10,
+      "location": 13,
+      "season": 4}
+  },
+
+  {
+    "model":"farm_site.signup",
+    "pk": 34,
+    "fields": {
+      "member": 10,
+      "location": 13,
+      "season": 5}
+  },
+
+  {
+    "model":"farm_site.signup",
+    "pk": 35,
+    "fields": {
+      "member": 11,
+      "location": 7,
+      "season": 1}
+  },
+
+  {
+    "model":"farm_site.signup",
+    "pk": 36,
+    "fields": {
+      "member": 11,
+      "location": 7,
+      "season": 2}
+  },
+
+  {
+    "model":"farm_site.signup",
+    "pk": 37,
+    "fields": {
+      "member": 11,
+      "location": 7,
+      "season": 3}
+  },
+  {
+    "model":"farm_site.signup",
+    "pk": 38,
+    "fields": {
+      "member": 11,
+      "location": 8,
+      "season": 4}
+  },
+
+  {
+    "model":"farm_site.signup",
+    "pk": 39,
+    "fields": {
+      "member": 12,
+      "location": 4,
+      "season": 1}
+  },
+
+  {
+    "model":"farm_site.signup",
+    "pk": 40,
+    "fields": {
+      "member": 12,
+      "location": 4,
+      "season": 2}
+  },
+
+  {
+    "model":"farm_site.signup",
+    "pk": 41,
+    "fields": {
+      "member": 12,
+      "location": 4,
+      "season": 3}
+  },
+
+  {
+    "model":"farm_site.signup",
+    "pk": 42,
+    "fields": {
+      "member": 12,
+      "location": 4,
+      "season": 4}
+  },
+
+  {
+    "model":"farm_site.signup",
+    "pk": 43,
+    "fields": {
+      "member": 12,
+      "location": 4,
+      "season": 5}
+  },
+
+  {
+    "model":"farm_site.signup",
+    "pk": 44,
+    "fields": {
+      "member": 13,
+      "location": 6,
+      "season": 2}
+  },
+
+  {
+    "model":"farm_site.signup",
+    "pk": 45,
+    "fields": {
+      "member": 13,
+      "location": 6,
+      "season": 3}
+  },
+
+  {
+    "model":"farm_site.signup",
+    "pk": 46,
+    "fields": {
+      "member": 13,
+      "location": 6,
+      "season": 5}
+  },
+
+  {
+    "model":"farm_site.signup",
+    "pk": 47,
+    "fields": {
+      "member": 14,
+      "location": 11,
+      "season": 1}
+  },
+
+  {
+    "model":"farm_site.signup",
+    "pk": 48,
+    "fields": {
+      "member": 14,
+      "location": 11,
+      "season": 2}
+  },
+
+  {
+    "model":"farm_site.signup",
+    "pk": 49,
+    "fields": {
+      "member": 14,
+      "location": 11,
+      "season": 3}
+  },
+
+  {
+    "model":"farm_site.signup",
+    "pk": 50,
+    "fields": {
+      "member": 14,
+      "location": 11,
+      "season": 4}
+  },
+
+  {
+    "model":"farm_site.signup",
+    "pk": 51,
+    "fields": {
+      "member": 15,
+      "location": 15,
+      "season": 1}
+  },
+
+  {
+    "model":"farm_site.signup",
+    "pk": 52,
+    "fields": {
+      "member": 15,
+      "location": 15,
+      "season": 3}
+  },
+
+  {
+    "model":"farm_site.signup",
+    "pk": 53,
+    "fields": {
+      "member": 15,
+      "location": 15,
+      "season": 4}
+  },
+
+  {
+    "model":"farm_site.signup",
+    "pk": 54,
+    "fields": {
+      "member": 15,
+      "location": 15,
+      "season": 5}
+  },
+
+  {
+    "model":"farm_site.signup",
+    "pk": 55,
+    "fields": {
+      "member": 16,
+      "location": 4,
+      "season": 1}
+  },
+
+  {
+    "model":"farm_site.signup",
+    "pk": 56,
+    "fields": {
+      "member": 16,
+      "location": 4,
+      "season": 2}
+  },
+
+  {
+    "model":"farm_site.signup",
+    "pk": 57,
+    "fields": {
+      "member": 16,
+      "location": 4,
+      "season": 3}
+  },
+
+  {
+    "model":"farm_site.signup",
+    "pk": 58,
+    "fields": {
+      "member": 16,
+      "location": 4,
+      "season": 4}
+  },
+
+  {
+    "model":"farm_site.signup",
+    "pk": 59,
+    "fields": {
+      "member": 16,
+      "location": 4,
+      "season": 5}
+  },
+
+  {
+    "model":"farm_site.signup",
+    "pk": 60,
+    "fields": {
+      "member": 17,
+      "location": 10,
+      "season": 1}
+  },
+
+  {
+    "model":"farm_site.signup",
+    "pk": 61,
+    "fields": {
+      "member": 17,
+      "location": 10,
+      "season": 2}
+  },
+
+  {
+    "model":"farm_site.signup",
+    "pk": 62,
+    "fields": {
+      "member": 17,
+      "location": 10,
+      "season": 3}
+  },
+
+  {
+    "model":"farm_site.signup",
+    "pk": 63,
+    "fields": {
+      "member": 17,
+      "location": 10,
+      "season": 4}
+  },
+
+  {
+    "model":"farm_site.signup",
+    "pk": 64,
+    "fields": {
+      "member": 18,
+      "location": 10,
+      "season": 1}
+  },
+
+  {
+    "model":"farm_site.signup",
+    "pk": 65,
+    "fields": {
+      "member": 18,
+      "location": 10,
+      "season": 2}
+  },
+
+  {
+    "model":"farm_site.signup",
+    "pk": 66,
+    "fields": {
+      "member": 18,
+      "location": 10,
+      "season": 4}
+  },
+
+  {
+    "model":"farm_site.signup",
+    "pk": 67,
+    "fields": {
+      "member": 18,
+      "location": 10,
+      "season": 5}
+  },
+
+  {
+    "model":"farm_site.signup",
+    "pk": 68,
+    "fields": {
+      "member": 19,
+      "location": 10,
+      "season": 1}
+  },
+
+  {
+    "model":"farm_site.signup",
+    "pk": 69,
+    "fields": {
+      "member": 19,
+      "location": 10,
+      "season": 2}
+  },
+
+  {
+    "model":"farm_site.signup",
+    "pk": 70,
+    "fields": {
+      "member": 19,
+      "location": 10,
+      "season": 3}
+  },
+
+  {
+    "model":"farm_site.signup",
+    "pk": 71,
+    "fields": {
+      "member": 19,
+      "location": 10,
+      "season": 4}
+  },
+
+  {
+    "model":"farm_site.signup",
+    "pk": 72,
+    "fields": {
+      "member": 20,
+      "location": 13,
+      "season": 2}
+  },
+
+  {
+    "model":"farm_site.signup",
+    "pk": 73,
+    "fields": {
+      "member": 20,
+      "location": 13,
+      "season": 3}
+  },
+
+  {
+    "model":"farm_site.signup",
+    "pk": 74,
+    "fields": {
+      "member": 20,
+      "location": 13,
+      "season": 5}
+  },
+
+  {
+    "model":"farm_site.signup",
+    "pk": 75,
+    "fields": {
+      "member": 21,
+      "location": 3,
+      "season": 1}
+  },
+
+  {
+    "model":"farm_site.signup",
+    "pk": 76,
+    "fields": {
+      "member": 21,
       "location": 3,
       "season": 2}
+  },
+
+  {
+    "model":"farm_site.signup",
+    "pk": 77,
+    "fields": {
+      "member": 21,
+      "location": 3,
+      "season": 3}
+  },
+
+  {
+    "model":"farm_site.signup",
+    "pk": 78,
+    "fields": {
+      "member": 21,
+      "location": 3,
+      "season": 4}
+  },
+
+  {
+    "model":"farm_site.signup",
+    "pk": 79,
+    "fields": {
+      "member": 22,
+      "location": 1,
+      "season": 1}
+  },
+
+  {
+    "model":"farm_site.signup",
+    "pk": 80,
+    "fields": {
+      "member": 22,
+      "location": 1,
+      "season": 2}
   }
+
+
 
 ]
