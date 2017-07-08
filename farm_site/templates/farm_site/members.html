@@ -1,9 +1,11 @@
 {% extends 'farm_site/base.html' %}
 
 {% block content %}
-<h1>Members</h1>
-  {% for member in members %}
-      <p>{{ member.first_name}} {{ member.last_name}}</p>
+<main>
+<h2>Current Season Members</h2>
+  {% for signup in signups %}
+      <h4><a href=''>{{ signup.member.first_name}} {{ signup.member.last_name}}</a></h4>
   {% endfor %}
+</main>
 
 {% endblock %}

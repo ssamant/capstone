@@ -8,6 +8,9 @@ from .models import Season
 def index(request):
     return render(request, 'farm_site/index.html', {})
 
+def about(request):
+    return render(request, 'farm_site/about.html', {})
+
 def csa(request):
     return render(request, 'farm_site/csa.html', {})
 
@@ -23,8 +26,8 @@ def dashboard(request):
 
 
 def members(request):
-    members = Member.objects.all
-    return render(request, 'farm_site/members.html', {'members': members})
+    current_signups = Signup.objects.filter(season_id=1).order_by("member")
+    return render(request, 'farm_site/members.html', {'signups': current_signups})
 
 def locations(request):
     locations = Location.objects.filter(current=True)

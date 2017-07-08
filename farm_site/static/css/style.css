@@ -1,0 +1,15 @@
+h1, h2, h3, h4, h5 {
+  color: darkgreen;
+}
+
+header h1 {
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
+}
+
+#contact {
+  background-color: lightgreen;
+}

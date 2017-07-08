@@ -1,32 +1,32 @@
 {% extends 'farm_site/base.html' %}
 
 {% block content %}
-    <div class='about'>
+    <div id='about'>
       <h2>About</h2>
       <p>
         Local Roots is a family-run vegetable farm in the Snoqualmie river valley, about 20 miles outside of Seattle. Wife and husband team Siri and Jason, along with a small crew of workers and apprentices, grow about ten acres of vegetables, which we sell at Seattle-area farmers markets, through our Community Supported Agriculture subscription program, and to many fine restaurants.
       </p>
-      <h4><a href="">Sign Up</a></h4>
+      <h4><a href='{% url 'about' %}'>Learn More</a></h4>
     </div>
-    <div class='csa'>
+    <div id='csa'>
       <h2>CSA</h2>
       <p>
         2017	is	our	eleventh season farming	and	offering	our	popular	CSA	program.	A	wide	variety	of	crops	thrive	in	our	mild	climate	and	world-class	soil	and we grow	more	than	50	different	vegetables	and	herbs.	CSA	subscribers	receive	a	box	of	freshly harvested	vegetables	once	a	week	during	the	growing season.	All	produce	is	grown	by	us,	here	on our	farm.
       </p>
-      <h4><a href="">Learn More and Sign Up</a></h4>
+      <h4><a href='{% url 'csa' %}'>Learn More and Sign Up</a></h4>
     </div>
-    <div class='find-us'>
+    <div id='find-us'>
       <h2>Where to Find Us</h2>
       <h3>Farm Stand</h3>
-      <p></p>
+      <p>Our honor-system farmstand is located at 262nd Ave NE, just off 124th St.</br>Open daily, 9 AM – Dusk</br>Cash or check</br>
+      <p>Now featuring Organic fruit from the Okanogan Producers Marketing Cooperative!</p>
+
       <h3>Broadway Farmers Market</h3>
-      <p>Sundays from 11-3
-        This market is open year-round Our last 2016 market day will be November 20th
-        Broadway and Pine</p>
+      <p>Sundays from 11-3</br>This market is open year-round Our last 2016 market day will be November 20th</br>Broadway and Pine</p>
     </div>
-    <div class='restaurants'>
+    <div id='restaurants'>
       <h2>Restaurants</h2>
       <p>We are proud to supply numerous wonderful locally-owned restaurants. By supporting these restaurants, you help to build a strong local food system.</p>
-      <h4>Chefs: <a href="">sign up for our weekly sheet</a></h4>
+      <h4>Chefs: <a href='{% url 'restaurants' %}'>sign up for our weekly sheet</a></h4>
     </div>
 {% endblock %}
