@@ -32,7 +32,7 @@ class Member(models.Model):
     # locations = models.ManyToManyField(Location)
 
     def __str__(self):
-        return self.last_name
+        return "%s %s" % (self.first_name, self.last_name)
 
 class Signup(models.Model):
     member = models.ForeignKey(Member)
