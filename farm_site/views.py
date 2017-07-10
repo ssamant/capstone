@@ -35,8 +35,12 @@ def members(request):
 def member_info(request, member_id):
     member = get_object_or_404(Member, pk=member_id)
     signups = member.signup_set.all()
+    try:
+        current_signup = member.signup_set.get(season__current_season=True)
+    except Signup.DoesNotExist:
+        current_signup = None
 
-    return render(request, 'farm_site/member_info.html', { 'member': member, 'signups': signups })
+    return render(request, 'farm_site/member_info.html', { 'member': member, 'signups': signups, 'current_signup': current_signup })
 
 def locations(request):
     locations = Location.objects.filter(current=True).order_by("name")

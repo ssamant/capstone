@@ -2,6 +2,19 @@
 
 {% block content %}
 <main>
+{% if current_signup %}
+<h2>{{ current_signup.season }} Sign Up info </h2>
+<p>Pickup location: {{ current_signup.location.name }}</p>
+<p>Paid:
+  {% if current_signup.paid %}
+    Yes
+  {% else %}
+    No
+  {% endif %}
+</p>
+
+
+{% endif %}
 
 
 
@@ -10,15 +23,16 @@
   <p>{{ signup.season.year }} {{ signup.location.name }}</p>
 {% endfor %}
 
+<h2>Contact info</h2>
 
-<h2>Address</h2>
+<h5>Address</h5>
 <p>{{ member.street_address}}</p>
 <p>{{ member.city }} {{ member.state }} {{ member.zipcode}}</p>
 
-<h2>Phone</h2>
+<h5>Phone</h5>
 <p>{{ member.phone }}</p>
 
-<h2>Email</h2>
+<h5>Email</h5>
 <p>{{ member.email }}</p>
 
 </main>

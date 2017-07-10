@@ -26,9 +26,11 @@
           <td>
             {{ signup.location.name }}
           </td>
-          <td>
-            Checkbox
-          </td>
+            {% if signup.paid %}
+              <td>Yes</td>
+            {% else %}
+              <td>No</td>
+            {% endif %}
         </tr>
 
         {% endfor %}
