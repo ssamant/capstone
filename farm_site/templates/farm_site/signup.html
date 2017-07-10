@@ -1,0 +1,10 @@
+{% extends 'farm_site/base.html' %}
+
+{% block content %}
+<h3>Sign up for our CSA</h3>
+<form method='POST' class='post-form'>
+  {% csrf_token %}
+  {{ form.as_p }}
+
+</form>
+{% endblock %}

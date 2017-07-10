@@ -4,6 +4,7 @@ from .models import Member
 from .models import Location
 from .models import Signup
 from .models import Season
+from .forms import SignupForm
 
 # general views
 def index(request):
@@ -53,3 +54,7 @@ def signups(request):
 
 def newsletter(request):
     return render(request, 'farm_site/newsletter.html', {})
+
+def csa_signup(request):
+    form = SignupForm()
+    return render(request, 'farm_site/signup.html', {'form': form})

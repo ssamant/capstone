@@ -11,5 +11,6 @@ urlpatterns = [
     url(r'dashboard/signups', views.signups, name='signups'),
     url(r'dashboard/locations', views.locations, name='locations'),
     url(r'dashboard', views.dashboard, name='dashboard'),
-    url(r'^newsletter$', views.newsletter, name='newsletter')
+    url(r'^newsletter$', views.newsletter, name='newsletter'),
+    url(r'^signup$', views.csa_signup, name='csa_signup')
 ]
