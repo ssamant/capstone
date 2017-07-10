@@ -27,9 +27,10 @@ def dashboard(request):
 
 
 def members(request):
-    current_members = Member.objects.filter(signup__season__current_season=True).order_by("last_name")
+    current_signups = Signup.objects.filter(season__current_season=True).order_by("member__last_name")
     current_year = Season.objects.get(current_season=True).year
-    return render(request, 'farm_site/members.html', {'members': current_members, 'current_year': current_year})
+
+    return render(request, 'farm_site/members.html', {'signups': current_signups, 'current_year': current_year})
 
 def member_info(request, member_id):
     member = get_object_or_404(Member, pk=member_id)

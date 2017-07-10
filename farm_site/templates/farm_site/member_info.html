@@ -7,19 +7,19 @@
 
 <h2>Sign up history</h2>
 {% for signup in signups %}
-  <h4>{{ signup.season.year }} {{ signup.location.name }}</h4>
+  <p>{{ signup.season.year }} {{ signup.location.name }}</p>
 {% endfor %}
 
 
 <h2>Address</h2>
-<h4>{{ member.street_address}}</h4>
-<h4>{{ member.city }} {{ member.state }} {{ member.zipcode}}</h4>
+<p>{{ member.street_address}}</p>
+<p>{{ member.city }} {{ member.state }} {{ member.zipcode}}</p>
 
 <h2>Phone</h2>
-<h4>{{ member.phone }}</h4>
+<p>{{ member.phone }}</p>
 
 <h2>Email</h2>
-<h4>{{ member.email }}</h4>
+<p>{{ member.email }}</p>
 
 </main>
 {% endblock %}

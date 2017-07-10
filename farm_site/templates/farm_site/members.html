@@ -4,29 +4,30 @@
   {% include 'farm_site/dashboard_nav.html' %}
 {% endblock %}
 
-
 {% block content %}
-
 <main>
 
-  <h2>{{ current_year }} CSA Season Members</h2>
+  <h2>{{ current_year }} CSA Season Signups</h2>
   <div class='table-responsive'>
     <table>
       <thead>
         <tr>
           <th>Name</th>
           <th>Location</th>
-          <th>Paid -- make this a checkbox?</th>
+          <th>Paid -- yes/no</th>
         </tr>
       </thead>
       <tbody>
-        {% for member in members %}
+        {% for signup in signups %}
         <tr>
           <td>
-            <a href='{% url 'member_info' member_id=member.id %}'>{{ member.first_name}} {{ member.last_name}}</a>
+            <a href='{% url 'member_info' member_id=signup.member.id %}'>{{ signup.member.first_name}} {{ signup.member.last_name}}</a>
           </td>
           <td>
-            location here
+            {{ signup.location.name }}
+          </td>
+          <td>
+            Checkbox
           </td>
         </tr>
 
@@ -35,5 +36,4 @@
     </table>
   </div>
 </main>
-
 {% endblock %}
