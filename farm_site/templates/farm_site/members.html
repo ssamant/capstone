@@ -1,11 +1,39 @@
 {% extends 'farm_site/base.html' %}
 
+{% block dashboardnav %}
+  {% include 'farm_site/dashboard_nav.html' %}
+{% endblock %}
+
+
 {% block content %}
+
 <main>
-<h2>Current Season Members</h2>
-  {% for signup in signups %}
-      <h4><a href=''>{{ signup.member.first_name}} {{ signup.member.last_name}}</a></h4>
-  {% endfor %}
+
+  <h2>{{ current_year }} CSA Season Members</h2>
+  <div class='table-responsive'>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Location</th>
+          <th>Paid -- make this a checkbox?</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for member in members %}
+        <tr>
+          <td>
+            <a href='{% url 'member_info' member_id=member.id %}'>{{ member.first_name}} {{ member.last_name}}</a>
+          </td>
+          <td>
+            location here
+          </td>
+        </tr>
+
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
 </main>
 
 {% endblock %}

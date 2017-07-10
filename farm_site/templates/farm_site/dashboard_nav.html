@@ -1,0 +1,25 @@
+<div class="dashboard">
+<h2>Manage the crap out of your farm</h2>
+<nav class='dashboard navbar navbar-toggleable-md navbar-light bg-faded'>
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class='btn' href='{% url 'members' %}'>Current Season Members<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class='btn' href='{% url 'locations' %}'>Current Season Locations<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="btn" href="{% url 'newsletter' %}"><span class="sr-only">(current)</span>Send Newsletter</a>
+      </li>
+    </ul>
+
+  </div>
+</nav>
+
+</div>

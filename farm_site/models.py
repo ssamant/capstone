@@ -3,7 +3,8 @@ from django.utils import timezone
 
 class Season(models.Model):
     year = models.CharField(max_length=4)
-
+    current_season = models.BooleanField()
+    
     def __str__(self): return self.year
 
 class Location(models.Model):
@@ -36,6 +37,7 @@ class Signup(models.Model):
     member = models.ForeignKey(Member)
     location = models.ForeignKey(Location)
     season = models.ForeignKey(Season)
+
 
     def __str__(self):
         return "Name: %s, Year: %s" % (self.member, self.season)

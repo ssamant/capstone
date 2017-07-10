@@ -1,9 +1,15 @@
 {% extends 'farm_site/base.html' %}
 
+{% block dashboardnav %}
+  {% include 'farm_site/dashboard_nav.html' %}
+{% endblock %}
+
 {% block content %}
-<h1>Locations</h1>
+<h1>{{ current_year }} CSA season pick-up locations</h1>
   {% for location in locations %}
       <p>{{ location.name}}</p>
   {% endfor %}
 
 {% endblock %}
+
+<h2>See all locations</h2>

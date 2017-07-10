@@ -1,4 +1,5 @@
 from django.shortcuts import render, render, get_object_or_404, redirect
+from django.utils import timezone
 from .models import Member
 from .models import Location
 from .models import Signup
@@ -26,13 +27,24 @@ def dashboard(request):
 
 
 def members(request):
-    current_signups = Signup.objects.filter(season_id=1).order_by("member")
-    return render(request, 'farm_site/members.html', {'signups': current_signups})
+    current_members = Member.objects.filter(signup__season__current_season=True).order_by("last_name")
+    current_year = Season.objects.get(current_season=True).year
+    return render(request, 'farm_site/members.html', {'members': current_members, 'current_year': current_year})
+
+def member_info(request, member_id):
+    member = get_object_or_404(Member, pk=member_id)
+    signups = member.signup_set.all()
+
+    return render(request, 'farm_site/member_info.html', { 'member': member, 'signups': signups })
 
 def locations(request):
-    locations = Location.objects.filter(current=True)
-    return render(request, 'farm_site/locations.html', {'locations': locations})
+    locations = Location.objects.filter(current=True).order_by("name")
+    current_year = Season.objects.get(current_season=True).year
+    return render(request, 'farm_site/locations.html', {'locations': locations, 'current_year': current_year})
 
 def signups(request):
     signups = Signup.objects.all
     return render(request, 'farm_site/signups.html', {'signups': signups})
+
+def newsletter(request):
+    return render(request, 'farm_site/newsletter.html', {})

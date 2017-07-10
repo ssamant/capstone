@@ -7,8 +7,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <title>Local Roots Farm</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|Raleway">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel=stylesheet href="{% static 'css/colors.css' %}">
 </head>
 
 <body>
@@ -45,6 +47,8 @@
       </div>
     </nav>
   </header>
+  {% block dashboardnav %}
+  {% endblock %}
   {% block content %}
   {% endblock %}
   <footer id="contact">

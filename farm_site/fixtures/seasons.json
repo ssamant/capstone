@@ -3,7 +3,8 @@
     "model": "farm_site.season",
     "pk": 1,
     "fields": {
-      "year": "2017"
+      "year": "2017",
+      "current_season": "True"
     }
   },
 
@@ -11,7 +12,8 @@
     "model": "farm_site.season",
     "pk": 2,
     "fields": {
-      "year": "2016"
+      "year": "2016",
+      "current_season": "False"
     }
   },
 
@@ -19,7 +21,8 @@
     "model": "farm_site.season",
     "pk": 3,
     "fields": {
-      "year": "2015"
+      "year": "2015",
+      "current_season": "False"
     }
   },
 
@@ -27,14 +30,17 @@
     "model": "farm_site.season",
     "pk": 4,
     "fields": {
-      "year": "2014"}
+      "year": "2014",
+      "current_season": "False"
+    }
     },
 
     {
       "model": "farm_site.season",
       "pk": 5,
       "fields": {
-        "year": "2013"
+        "year": "2013",
+        "current_season": "False"
       }
     }
 ]
