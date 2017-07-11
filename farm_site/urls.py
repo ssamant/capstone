@@ -1,6 +1,7 @@
 from django.conf.urls import url
 from . import views
 
+
 urlpatterns = [
     url(r'^$', views.index, name='index'),
     url(r'^about$', views.about, name='about'),
@@ -12,5 +13,10 @@ urlpatterns = [
     url(r'dashboard/locations', views.locations, name='locations'),
     url(r'dashboard', views.dashboard, name='dashboard'),
     url(r'^newsletter$', views.newsletter, name='newsletter'),
-    url(r'^signup$', views.csa_signup, name='csa_signup')
+
+    url(r'^signup_member$', views.signup_member, name='signup_member'),
+    url(r'^signup_csa$', views.signup_csa, name='signup_csa'),
+    url(r'^signup_success$', views.signup_success, name='signup_success'),
+
+    url(r'^active$', views.active_signups, name='active_signups')
 ]

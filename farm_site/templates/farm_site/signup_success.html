@@ -1,0 +1,11 @@
+{% extends 'farm_site/base.html' %}
+
+
+{% block content %}
+<h3>Hooray! You have signed up for the {{ signup.season.year }} CSA season.</h3>
+<h4>See the details below. We will confirm your sign up and send an email in the next few days.</h4>
+<p>Name: {{ signup.member.first_name }} {{ signup.member.last_name }}</p>
+<p>Pick-up location: {{ signup.location.name }}</p>
+<p>Box size: {{ signup.box }}</p>
+<p>Eggs: {{ signup.eggs }}</p>
+{% endblock %}

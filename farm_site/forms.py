@@ -1,10 +1,15 @@
 from django import forms
+from .models import Signup, Member, Location
 
-from .models import Signup
-from .models import Member
 
-class SignupForm(forms.ModelForm):
 
+class CreateMember(forms.ModelForm):
+    class Meta:
+        model = Member
+        fields = ('first_name', 'last_name', 'email', 'phone', 'street_address', 'city', 'zipcode', 'state')
+
+
+class CreateSignup(forms.ModelForm):
     class Meta:
         model = Signup
-        fields = ('box', 'eggs', 'member', 'location')
+        fields = ('box', 'eggs', 'location')

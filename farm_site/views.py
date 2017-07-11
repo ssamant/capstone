@@ -1,10 +1,9 @@
 from django.shortcuts import render, render, get_object_or_404, redirect
 from django.utils import timezone
-from .models import Member
-from .models import Location
-from .models import Signup
-from .models import Season
-from .forms import SignupForm
+from django.db.models import Q
+from .models import Member, Location, Signup, Season
+from .forms import CreateMember, CreateSignup
+
 
 # general views
 def index(request):
@@ -19,6 +18,38 @@ def csa(request):
 def restaurants(request):
     return render(request, 'farm_site/restaurants.html', {})
 
+#sign up for a csa
+def signup_member(request):
+    if request.method == 'POST':
+        form = CreateMember(request.POST)
+        if form.is_valid():
+            member = form.save()
+            request.session['member_id'] = member.id
+            return redirect('signup_csa')
+    else:
+        form = CreateMember()
+    return render(request, 'farm_site/signup_member.html', {'form': form})
+
+
+def signup_csa(request):
+    member = get_object_or_404(Member, pk=request.session['member_id'])
+    if request.method == "POST":
+        form = CreateSignup(request.POST)
+        if form.is_valid():
+            signup = form.save(commit=False)
+            signup.member = member
+            signup.season = Season.objects.get(current_season=True)
+            signup.save()
+            request.session['signup_id'] = signup.id
+            return redirect('signup_success')
+    else:
+        form = CreateSignup()
+    return render(request, 'farm_site/signup_csa.html', {'form': form})
+
+def signup_success(request):
+    signup = get_object_or_404(Signup, pk=request.session['signup_id'])
+    return render(request, 'farm_site/signup_success.html', {'signup': signup})
+
 # csa member views
 
 
@@ -28,7 +59,7 @@ def dashboard(request):
 
 
 def members(request):
-    current_signups = Signup.objects.filter(season__current_season=True).order_by("member__last_name")
+    current_signups = Signup.objects.filter(Q(season__current_season=True), Q(paid=True)).order_by("member__last_name")
     current_year = Season.objects.get(current_season=True).year
 
     return render(request, 'farm_site/members.html', {'signups': current_signups, 'current_year': current_year})
@@ -44,8 +75,8 @@ def member_info(request, member_id):
     return render(request, 'farm_site/member_info.html', { 'member': member, 'signups': signups, 'current_signup': current_signup })
 
 def locations(request):
-    locations = Location.objects.filter(current=True).order_by("name")
     current_year = Season.objects.get(current_season=True).year
+    locations = Location.objects.filter(current=True).order_by("name")
     return render(request, 'farm_site/locations.html', {'locations': locations, 'current_year': current_year})
 
 def signups(request):
@@ -55,6 +86,7 @@ def signups(request):
 def newsletter(request):
     return render(request, 'farm_site/newsletter.html', {})
 
-def csa_signup(request):
-    form = SignupForm()
-    return render(request, 'farm_site/signup.html', {'form': form})
+
+def active_signups(request):
+    active = Signup.objects.filter(Q(season__current_season=True), Q(paid=False))
+    return render(request, 'farm_site/active_signups.html', { 'active': active })

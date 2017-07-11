@@ -1,0 +1,10 @@
+{% extends 'farm_site/base.html' %}
+
+{% block content %}
+<h3>Enter your profile information</h3>
+<form method='POST' class='post-form'>
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type='submit' class='save btn btn-default'>Save Profile Info</button>
+</form>
+{% endblock %}

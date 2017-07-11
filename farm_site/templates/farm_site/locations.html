@@ -6,9 +6,25 @@
 
 {% block content %}
 <h1>{{ current_year }} CSA season pick-up locations</h1>
-  {% for location in locations %}
-      <p>{{ location.name}}</p>
-  {% endfor %}
+<table>
+  <thead>
+    <tr>
+      <th>Location</th>
+      <th># of Signups</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for location in locations %}
+      <tr>
+        <td>{{ location.name }}</td>
+        <td>{{ location.current_signups.count }}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+
+
+</table>
+
 
 {% endblock %}
 

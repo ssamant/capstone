@@ -7,14 +7,14 @@
 {% block content %}
 <main>
 
-  <h2>{{ current_year }} CSA Season Signups</h2>
+  <h2>Paid {{ current_year }} CSA Signups</h2>
+  <p>Total paid signups: {{ signups.count }}</p>
   <div class='table-responsive'>
     <table>
       <thead>
         <tr>
           <th>Name</th>
           <th>Location</th>
-          <th>Paid -- yes/no</th>
         </tr>
       </thead>
       <tbody>
@@ -26,11 +26,7 @@
           <td>
             {{ signup.location.name }}
           </td>
-            {% if signup.paid %}
-              <td>Yes</td>
-            {% else %}
-              <td>No</td>
-            {% endif %}
+
         </tr>
 
         {% endfor %}
