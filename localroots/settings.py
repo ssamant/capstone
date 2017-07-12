@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'farm_site'
+    'farm_site',
+    'easy_maps'
 ]
 
 MIDDLEWARE = [
@@ -120,3 +121,5 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+EASY_MAPS_GOOGLE_MAPS_API_KEY = 'AIzaSyANwCW4R0nqW8qDufj_dkYAm9gEUO6J2JU'
