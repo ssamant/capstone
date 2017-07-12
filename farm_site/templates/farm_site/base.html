@@ -49,18 +49,32 @@
   </header>
   {% block dashboardnav %}
   {% endblock %}
-  {% block content %}
-  {% endblock %}
-  <footer id="contact">
-    <div>
-      <p>123 Main St</p>
-      <p>Duvall, WA 98444</p>
+
+  <main>
+    {% block content %}
+    {% endblock %}
+  </main>
+
+  <footer >
+    <div class='row'>
+    <div class='col-md-4' >
+      <p>p: 206-555-5555</br>
+      e: farm@localroots.com
+    </p>
     </div>
-    <div>
+    <div class='col-md-4' >
+      <p>Mailing Address:</br>
+      P.O. Box 526</br>
+      Duvall, WA 98019</p>
+    </div>
+    <div class='col-md-4'>
       <p>Find Us on Social media:</p>
-      <a href="">facebook</a>
-      <a href="">instagram</a>
+      <ul class = "social-media">
+        <li><a href="https://www.instagram.com/localrootsfarm/", target = "_blank"><img src="../static/assets/instagram.svg" alt="instagram" height="40px"></a></li>
+        <li><a href="https://www.facebook.com/Local-Roots-Farm-204688736212926/", target = "_blank"><img src="../static/assets/fb.svg" alt="facebook" height="40px"></a></li>
+      </ul>
     </div>
+      </div>
   </footer>
   <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>

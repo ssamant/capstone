@@ -1,3 +1,11 @@
+main {
+  padding: 0 2%;
+  position: relative;
+  margin-bottom: 200px;
+
+}
+
+
 h1, h2, h3, h4, h5 {
   font-family: 'Abril Fatface', cursive;
 }
@@ -30,12 +38,36 @@ a:hover, a:active, li.active {
     text-decoration: none;
 }
 
+.social-media li  {
+  list-style-type: none;
+  padding-right: 3%;
+  display: inline;
+  color: #f0f0f0;
+}
+
+.social-media a {
+  border: none;
+}
+
+.social-media a:hover {
+  background-color: inherit;
+}
+
+.social-media img:hover, .projects-intro img:hover {
+  background-color: #01FF70;
+  border-radius: 20px;
+}
 
 
-
-
-
-#contact {
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: block;
+  padding: 0 3%;
+  width: 100%;
   border-top: solid;
   border-width: thin;
+  background-color: white;
+
 }

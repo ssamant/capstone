@@ -12,4 +12,4 @@ class CreateMember(forms.ModelForm):
 class CreateSignup(forms.ModelForm):
     class Meta:
         model = Signup
-        fields = ('box', 'eggs', 'location')
+        fields = ('box', 'eggs', 'location', 'payment')

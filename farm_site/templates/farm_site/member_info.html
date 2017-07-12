@@ -1,7 +1,6 @@
 {% extends 'farm_site/base.html' %}
 
 {% block content %}
-<main>
 {% if current_signup %}
 <h2>{{ current_signup.season }} Sign Up info </h2>
 <p>Pickup location: {{ current_signup.location.name }}</p>
@@ -12,11 +11,7 @@
     No
   {% endif %}
 </p>
-
-
 {% endif %}
-
-
 
 <h2>Sign up history</h2>
 {% for signup in signups %}
@@ -35,5 +30,4 @@
 <h5>Email</h5>
 <p>{{ member.email }}</p>
 
-</main>
 {% endblock %}
