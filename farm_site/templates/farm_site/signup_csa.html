@@ -1,7 +1,13 @@
 {% extends 'farm_site/base.html' %}
 
-{% block content %}
 <h3>Sign up for our CSA</h3>
+
+{% block signupnav %}
+  {% include 'farm_site/signup_nav.html' %}
+{% endblock %}
+
+{% block content %}
+
 <form method='POST' class='post-form'>
   {% csrf_token %}
   {{ form.as_p }}

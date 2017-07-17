@@ -2,7 +2,7 @@ from django.shortcuts import render, render, get_object_or_404, redirect
 from django.utils import timezone
 from django.db.models import Q
 from .models import Member, Location, Signup, Season
-from .forms import CreateMember, CreateSignup
+from .forms import CreateMember, CreateSignup, CreateUser
 
 
 # general views
@@ -47,8 +47,23 @@ def signup_csa(request):
     return render(request, 'farm_site/signup_csa.html', {'form': form})
 
 def signup_success(request):
+    #need to get member object to put in User
     signup = get_object_or_404(Signup, pk=request.session['signup_id'])
-    return render(request, 'farm_site/signup_success.html', {'signup': signup})
+    if request.method == "POST":
+        form = CreateUser(request.POST)
+        if form.is_valid():
+            user = form.save(commit=False)
+            member = get_object_or_404(Member, pk=request.session['member_id'])
+            user.member = member
+            user = form.save()
+            return redirect('signup_done')
+    else:
+        form = CreateUser()
+    return render(request, 'farm_site/signup_success.html', {'signup': signup, 'form': form})
+
+def signup_done(request):
+    return render(request, 'farm_site/signup_done.html', {})
+
 
 # csa member views
 

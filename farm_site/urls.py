@@ -17,6 +17,7 @@ urlpatterns = [
     url(r'^signup_member$', views.signup_member, name='signup_member'),
     url(r'^signup_csa$', views.signup_csa, name='signup_csa'),
     url(r'^signup_success$', views.signup_success, name='signup_success'),
-
+    url(r'^signup_done$', views.signup_done, name='signup_done'),
+    
     url(r'^active$', views.active_signups, name='active_signups')
 ]

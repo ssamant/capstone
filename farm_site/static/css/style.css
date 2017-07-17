@@ -82,3 +82,8 @@ a:hover, a:active, li.active {
   background-color: #01FF70;
   border-radius: 20px;
 }
+
+#map {
+	height: 200px;
+	width: 30%;
+}

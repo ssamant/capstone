@@ -1,5 +1,8 @@
 {% extends 'farm_site/base.html' %}
 
+{% block signupnav %}
+  {% include 'farm_site/signup_nav.html' %}
+{% endblock %}
 
 {% block content %}
 <h3>Hooray! You have signed up for the {{ signup.season.year }} CSA season.</h3>
@@ -9,4 +12,11 @@
 <p>Box size: {{ signup.box }}</p>
 <p>Eggs: {{ signup.eggs }}</p>
 <p>Payment method: {{ signup.payment }}</p>
+
+<h3>Create an account</h3>
+<form method='POST' class='post-form'>
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type='submit' class='save btn btn-outline-primary'>Create Account</button>
+</form>
 {% endblock %}

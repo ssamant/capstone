@@ -1,5 +1,9 @@
 {% extends 'farm_site/base.html' %}
 
+{% block signupnav %}
+  {% include 'farm_site/signup_nav.html' %}
+{% endblock %}
+
 {% block content %}
 <h3>Enter your profile information</h3>
 <form method='POST' class='post-form'>
