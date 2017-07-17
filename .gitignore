@@ -9,4 +9,5 @@ capstone_product_plan.md
 /static
 /notebook
 db.sqlite3
+db.postgresql
 .DS_STORE

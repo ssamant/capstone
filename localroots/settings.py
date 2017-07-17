@@ -37,8 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'farm_site',
-    'easy_maps'
+    'farm_site'
+
 ]
 
 MIDDLEWARE = [
@@ -77,11 +77,17 @@ WSGI_APPLICATION = 'localroots.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'farmsite',
+        'USER': 'sai',
+        'PASSWORD': '',
+        'HOST': 'localhost',
+        'PORT': '5432'
     }
 }
 
+
+AUTH_USER_MODEL = 'farm_site.User'
 
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators
@@ -121,5 +127,3 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-
-EASY_MAPS_GOOGLE_MAPS_API_KEY = 'AIzaSyANwCW4R0nqW8qDufj_dkYAm9gEUO6J2JU'
