@@ -14,6 +14,10 @@ body {
 #header h1 {
   text-align: center;
 }
+
+#login {
+	text-align: right;
+}
 #main {
 	padding:0 2% 100px 2% ; /* Height of the footer element */
 }

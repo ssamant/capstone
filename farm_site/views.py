@@ -2,8 +2,11 @@ from django.shortcuts import render, render, get_object_or_404, redirect
 from django.utils import timezone
 from django.db.models import Q
 from .models import Member, Location, Signup, Season
-from .forms import CreateMember, CreateSignup, CreateUser
-
+from .forms import CreateMember, CreateSignup, CreateUser, SignupPaid
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.models import Group
+from django.forms import modelformset_factory
+import logging
 
 # general views
 def index(request):
@@ -26,6 +29,7 @@ def signup_member(request):
             member = form.save()
             request.session['member_id'] = member.id
             return redirect('signup_csa')
+            # add else to check if user is logged in
     else:
         form = CreateMember()
     return render(request, 'farm_site/signup_member.html', {'form': form})
@@ -55,10 +59,13 @@ def signup_success(request):
             user = form.save(commit=False)
             member = get_object_or_404(Member, pk=request.session['member_id'])
             user.member = member
+            # check if user.save() would work instead
             user = form.save()
+            group = Group.objects.get(name='Member')
+            user.groups.add(group)
             return redirect('signup_done')
     else:
-        form = CreateUser()
+        form = CreateUser(initial={'email':signup.member.email})
     return render(request, 'farm_site/signup_success.html', {'signup': signup, 'form': form})
 
 def signup_done(request):
@@ -66,12 +73,13 @@ def signup_done(request):
 
 
 # csa member views
-
+def csa_member_info(request, member_id):
+    member = get_object_or_404(Member, pk=member_id)
+    return render(request, 'farm_site/csa_member_info.html', {'member': member})
 
 # farmers views
 def dashboard(request):
     return render(request, 'farm_site/dashboard.html', {})
-
 
 def members(request):
     current_signups = Signup.objects.filter(Q(season__current_season=True), Q(paid=True)).order_by("member__last_name")
@@ -101,7 +109,29 @@ def signups(request):
 def newsletter(request):
     return render(request, 'farm_site/newsletter.html', {})
 
-
 def active_signups(request):
+    SignupPaidFormSet = modelformset_factory(Signup, form = SignupPaid)
     active = Signup.objects.filter(Q(season__current_season=True), Q(paid=False))
-    return render(request, 'farm_site/active_signups.html', { 'active': active })
+    print("HELLO")
+    if request.method == "POST":
+        formset = SignupPaidFormSet(request.POST)
+        print("method = Post")
+
+        if (formset.is_valid()):
+            for form in formset:
+                if form.is_valid() and not form.empty_permitted:
+                    print("*****Form****")
+                    print(form.cleaned_data["paid"])
+                    if form.cleaned_data["paid"]:
+                        print("*****Checked*****")
+                        print(form.cleaned_data["id"])
+                        signup = get_object_or_404(Signup, pk=form.instance.pk)
+                        signup.paid = True
+                        signup.save()
+
+
+    #once paid signups have been processed, clear the form and re-render page
+    #include a message?
+    formset = SignupPaidFormSet(queryset=active)
+    signups = zip(active,formset)
+    return render(request, 'farm_site/active_signups.html', {'signups': signups, 'formset': formset})

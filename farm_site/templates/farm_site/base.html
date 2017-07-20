@@ -1,4 +1,4 @@
-{% load staticfiles %}
+{% load staticfiles custom_tags %}
 
 
 <!DOCTYPE html>
@@ -17,6 +17,13 @@
     <div id="wrapper">
       <div id="header">
         <h1><a href='{% url 'index' %}'>Local Roots Farm</a></h1>
+      </div>
+      <div id='login'>
+        {% if user.is_authenticated %}
+          <p>welcome, {{ user.member.first_name }} <a href='logout'>logout</a></p>
+        {% else %}
+          <p>CSA members, please <a href='/login'>log in</a></p>
+        {% endif %}
       </div>
 
       <nav class='navbar navbar-toggleable-md navbar-light bg-faded'>
@@ -41,9 +48,11 @@
             <li class="nav-item">
               <a class="nav-link" href="#contact">Contact</a>
             </li>
+            {% if user|is_farmer %}
             <li class="nav-item">
               <a class="nav-link" href='{% url 'dashboard' %}'>dashboard</a>
             </li>
+            {% endif %}
           </ul>
 
         </div>

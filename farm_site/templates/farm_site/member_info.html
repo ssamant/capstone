@@ -1,5 +1,9 @@
 {% extends 'farm_site/base.html' %}
 
+{% block dashboardnav %}
+{% include 'farm_site/dashboard_nav.html' %}
+{% endblock %}
+
 {% block content %}
 {% if current_signup %}
 <h2>{{ current_signup.season }} Sign Up info </h2>

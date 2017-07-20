@@ -1,7 +1,7 @@
 from django.db import models
 from django.utils import timezone
 from django.core.mail import send_mail
-from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, BaseUserManager
+from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, BaseUserManager, Group
 from django.utils.translation import ugettext_lazy as _
 
 class Season(models.Model):
@@ -24,7 +24,6 @@ class Location(models.Model):
     def current_signups(self):
         return self.signup_set.filter(season__current_season=True)
 
-
 class Member(models.Model):
     first_name = models.CharField(_('first name'), max_length=30, blank=True)
     last_name = models.CharField(_('last name'), max_length=30, blank=True)
@@ -38,39 +37,8 @@ class Member(models.Model):
     def __str__(self):
         return "%s %s" % (self.first_name, self.last_name)
 
-
-
-
-
-
-class Signup(models.Model):
-    BOX_CHOICES = (
-        ('regular', 'Regular'),
-        ('large', 'Large')
-    )
-
-    EGG_CHOICES = (
-        ('none', 'None'),
-        ('half-dozen', 'Half Dozen'),
-        ('dozen', 'Dozen')
-    )
-
-    PAYMENT_CHOICES = (
-        ('check', 'Mail check'),
-        ('online', 'Online Bill Pay')
-    )
-
-    member = models.ForeignKey(Member)
-    location = models.ForeignKey(Location)
-    season = models.ForeignKey(Season)
-    # default=Season.objects.get(current_season=True
-    paid = models.BooleanField(default=False)
-    box = models.CharField(max_length=7, choices=BOX_CHOICES, default='regular')
-    eggs = models.CharField(max_length=10, choices=EGG_CHOICES, default='none')
-    payment = models.CharField(max_length=20, choices=PAYMENT_CHOICES, default='check')
-
-    def __str__(self):
-        return "Name: %s, Season: %s, Location: %s" % (self.user, self.season, self.location)
+    def short_name(self):
+        return "%s %s" % (self.first_name, self.last_name)
 
 class UserManager(BaseUserManager):
     use_in_migrations = True
@@ -120,7 +88,6 @@ class User(AbstractBaseUser, PermissionsMixin):
     def __str__(self):
         return self.email
 
-
     def email_user(self, subject, message, from_email=None, **kwargs):
         '''
         Sends an email to this User.
@@ -135,3 +102,32 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     def get_long_name(self):
         return self.email
+
+class Signup(models.Model):
+    BOX_CHOICES = (
+        ('regular', 'Regular'),
+        ('large', 'Large')
+    )
+
+    EGG_CHOICES = (
+        ('none', 'None'),
+        ('half-dozen', 'Half Dozen'),
+        ('dozen', 'Dozen')
+    )
+
+    PAYMENT_CHOICES = (
+        ('check', 'Mail check'),
+        ('online', 'Online Bill Pay')
+    )
+
+    member = models.ForeignKey(Member)
+    location = models.ForeignKey(Location)
+    season = models.ForeignKey(Season)
+    # default=Season.objects.get(current_season=True
+    paid = models.BooleanField(default=False)
+    box = models.CharField(max_length=7, choices=BOX_CHOICES, default='regular')
+    eggs = models.CharField(max_length=10, choices=EGG_CHOICES, default='none')
+    payment = models.CharField(max_length=20, choices=PAYMENT_CHOICES, default='check')
+
+    def __str__(self):
+        return "Name: %s, Season: %s, Location: %s" % (self.member, self.season, self.location)

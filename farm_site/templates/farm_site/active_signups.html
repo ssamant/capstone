@@ -1,35 +1,39 @@
 {% extends 'farm_site/base.html' %}
 
 {% block dashboardnav %}
-  {% include 'farm_site/dashboard_nav.html' %}
+{% include 'farm_site/dashboard_nav.html' %}
 {% endblock %}
 
 {% block content %}
 
 <h2>Manage {{ current_year }} CSA Signups</h2>
-<p>Signups needing your attention: {{ active.count }}</p>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Location</th>
-      <th>Paid</th>
-    </tr>
-  </thead>
-  {% for signup in active %}
-  <tr>
-    <td>
-      <a href='{% url 'member_info' member_id=signup.member.id %}'>{{ signup.member.first_name}} {{ signup.member.last_name}}</a>
-    </td>
-    <td>
-      {{ signup.location.name }}
-    </td>
-    <td>
-      checkbox for paid
-    </td>
-  </tr>
-  {% endfor %}
-</table>
-
-
+<p>Signups needing your attention: {{ signups.count }}</p>
+<form method='POST' class='post-form'>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Location</th>
+        <th>Paid</th>
+      </tr>
+    </thead>
+    {% csrf_token %}
+    {{ formset.management_form}}
+    {% for signup, form in signups %}
+        <tr>
+          <td>
+            {{ signup.member}}
+          </td>
+          <td>
+            {{ signup.location}}
+          </td>
+          <td>
+            {{form.id}}
+            {{form.paid}}
+          </td>
+        </tr>
+    {% endfor %}
+  </table>
+  <button type='submit' class='save btn btn-outline-primary'>Update Signups</button>
+</form>
 {% endblock %}
