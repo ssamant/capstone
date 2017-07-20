@@ -2,11 +2,15 @@ from django.shortcuts import render, render, get_object_or_404, redirect
 from django.utils import timezone
 from django.db.models import Q
 from .models import Member, Location, Signup, Season
-from .forms import CreateMember, CreateSignup, CreateUser, SignupPaid
+from .forms import CreateMember, CreateSignup, CreateUser, SignupPaid, EditLocation
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import Group
+from django.contrib.auth.decorators import login_required, user_passes_test
 from django.forms import modelformset_factory
 import logging
+
+
+
 
 # general views
 def index(request):
@@ -74,10 +78,35 @@ def signup_done(request):
 
 # csa member views
 def csa_member_info(request, member_id):
-    member = get_object_or_404(Member, pk=member_id)
+    if request.user.is_authenticated():
+        member = get_object_or_404(Member, pk=member_id)
     return render(request, 'farm_site/csa_member_info.html', {'member': member})
 
+def csa_member_edit(request, member_id):
+    member = get_object_or_404(Member, pk=member_id)
+    if request.method == "POST":
+        form = CreateMember(request.POST, instance=member)
+        if form.is_valid():
+            member = form.save()
+            return redirect('farm_site/csa_member_info.html')
+    else:
+        form = CreateMember(instance=member)
+        return render(request, 'farm_site/csa_member_edit.html', {'form': form})
+
+def edit_location(request, member_id):
+    member = get_object_or_404(Member, pk=member_id)
+    signup = member.current_signup()
+    if request.method == "POST":
+        form = EditLocation(request.POST, instance=signup)
+        if form.is_valid():
+            form.save
+            return redirect('farm_site/csa_member_info.html')
+    form = EditLocation(instance=signup)
+    return render(request, 'farm_site/edit_location.html', { 'form' : form })
+
 # farmers views
+
+@login_required(redirect_field_name='index')
 def dashboard(request):
     return render(request, 'farm_site/dashboard.html', {})
 
@@ -90,10 +119,7 @@ def members(request):
 def member_info(request, member_id):
     member = get_object_or_404(Member, pk=member_id)
     signups = member.signup_set.all()
-    try:
-        current_signup = member.signup_set.get(season__current_season=True)
-    except Signup.DoesNotExist:
-        current_signup = None
+    current_signup = member.current_signup
 
     return render(request, 'farm_site/member_info.html', { 'member': member, 'signups': signups, 'current_signup': current_signup })
 

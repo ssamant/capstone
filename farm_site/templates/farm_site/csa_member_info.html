@@ -1,0 +1,36 @@
+{% extends 'farm_site/base.html' %}
+
+
+{% block content %}
+<h4>Your Profile<h4>
+<p>{{ member }}</p>
+
+{% if member.current_signup %}
+<h2>{{ member.current_signup.season }} Sign Up info </h2>
+<p>Pickup location: {{ member.current_signup.location.name }} <a href="{% url 'edit_location' member_id=member.id %}">Change Pickup Location</a></p>
+<p>Paid:
+  {% if member.current_signup.paid %}
+  Yes
+  {% else %}
+  No
+  {% endif %}
+</p>
+{% else %}
+<h4>You're not signed up for the current season</h4>
+{% endif %}
+
+<h2>Contact info</h2>
+
+<h5>Address</h5>
+<p>{{ member.street_address}}</p>
+<p>{{ member.city }} {{ member.state }} {{ member.zipcode}}</p>
+
+<h5>Phone</h5>
+<p>{{ member.phone }}</p>
+
+<h5>Email</h5>
+<p>{{ member.email }}</p>
+
+
+<a class="btn btn-default" href="{% url 'csa_member_edit' member_id=member.pk %}">Edit Info</a>
+{% endblock %}

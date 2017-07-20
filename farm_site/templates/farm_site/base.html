@@ -21,6 +21,7 @@
       <div id='login'>
         {% if user.is_authenticated %}
           <p>welcome, {{ user.member.first_name }} <a href='logout'>logout</a></p>
+          <p><a href='{% url 'csa_member_info' member_id=user.member_id %}'>view profile</a></p>
         {% else %}
           <p>CSA members, please <a href='/login'>log in</a></p>
         {% endif %}

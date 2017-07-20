@@ -27,7 +27,9 @@ urlpatterns = [
     url(r'dashboard/active$', views.active_signups, name='active_signups'),
 
     #csa members with login
-    url(r'^csa/(?P<member_id>\d+)$', views.csa_member_info, name='csa_member_info'),
+    url(r'^(?P<member_id>\d+)$', views.csa_member_info, name='csa_member_info'),
+    url(r'^(?P<member_id>\d+)/edit$', views.csa_member_edit, name='csa_member_edit'),
+    url(r'^(?P<member_id>\d+)/edit_location$', views.edit_location, name='edit_location'),
 
     #authentication
     url(r'^login/$', auth_views.login, name='login'),

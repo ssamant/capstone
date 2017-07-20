@@ -6,15 +6,17 @@
 
 {% block content %}
 {% if current_signup %}
-<h2>{{ current_signup.season }} Sign Up info </h2>
-<p>Pickup location: {{ current_signup.location.name }}</p>
-<p>Paid:
-  {% if current_signup.paid %}
-    Yes
-  {% else %}
-    No
-  {% endif %}
-</p>
+  <h2>{{ current_signup.season }} Sign Up info </h2>
+  <p>Pickup location: {{ current_signup.location.name }}</p>
+  <p>Paid:
+    {% if current_signup.paid %}
+      Yes
+    {% else %}
+      No
+    {% endif %}
+  </p>
+{% else %}
+<h4>Not signed up for the current season</h4>
 {% endif %}
 
 <h2>Sign up history</h2>

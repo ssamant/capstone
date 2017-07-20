@@ -16,6 +16,10 @@ class CreateSignup(forms.ModelForm):
         model = Signup
         fields = ('box', 'eggs', 'location', 'payment')
 
+class EditLocation(forms.ModelForm):
+    class Meta:
+        model = Signup
+        fields = ('location',)
 
 class CreateUser(UserCreationForm):
     class Meta:

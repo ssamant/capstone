@@ -1,0 +1,9 @@
+{% extends 'farm_site/base.html' %}
+
+{% block content %}
+<h4>Update your pick up location:</h4>
+{{ form.id }}
+{{ form.as_p}}
+<a class="btn btn-default" href="{% url 'csa_member_info' member_id=form.member_id %}">Edit Info</a>
+
+{% endblock %}
