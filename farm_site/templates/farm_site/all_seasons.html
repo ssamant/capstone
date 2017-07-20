@@ -1,0 +1,37 @@
+{% extends 'farm_site/base.html' %}
+
+{% block dashboardnav %}
+  {% include 'farm_site/dashboard_nav.html' %}
+{% endblock %}
+
+{% block content %}
+
+  <h2>All CSA Seasons</h2>
+  <div class='table-responsive'>
+    <table>
+      <thead>
+        <tr>
+          <th>Season</th>
+          <th>Name</th>
+          <th>Location</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for signup in signups %}
+        <tr>
+          <td> {{signup.season}} </td>
+          <td>
+            <a href='{% url 'member_info' member_id=signup.member.id %}'>{{ signup.member}} </a>
+          </td>
+          <td>
+            {{ signup.location }}
+          </td>
+
+        </tr>
+
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+{% endblock %}

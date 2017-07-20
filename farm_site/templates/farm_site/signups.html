@@ -1,8 +1,0 @@
-{% extends 'farm_site/base.html' %}
-
-{% block content %}
-<h2>Signups</h2>
-  {% for signup in signups %}
-    <p>{{ signup.member}} {{ signup.location}} {{ signup.season}} </p>
-  {% endfor %}
-{% endblock %}

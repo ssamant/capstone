@@ -3,6 +3,7 @@ from django.utils import timezone
 from django.core.mail import send_mail
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, BaseUserManager, Group
 from django.utils.translation import ugettext_lazy as _
+from .receivers import user_logged_out, user_logged_in
 
 class Season(models.Model):
     year = models.CharField(max_length=4)

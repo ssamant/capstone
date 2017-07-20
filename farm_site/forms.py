@@ -35,3 +35,11 @@ class SignupPaid(forms.ModelForm):
         # }
 
         # name = forms.TextInput(attrs={'size': 10, 'title': 'Your name',})
+
+class ContactForm(forms.Form):
+    contact_name = forms.CharField(required=True)
+    contact_email = forms.EmailField(required=True)
+    content = forms.CharField(
+        required=True,
+        widget=forms.Textarea
+    )

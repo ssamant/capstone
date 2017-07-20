@@ -2,12 +2,12 @@
 
 
 {% block content %}
-<h4>Your Profile<h4>
-<p>{{ member }}</p>
+<h2>Your Profile<h2>
+<p>{{ member }}   <button class='save btn btn-outline-primary'><a href="{% url 'csa_member_edit' member_id=member.pk %}">Edit My Info</a></button></p> 
 
 {% if member.current_signup %}
-<h2>{{ member.current_signup.season }} Sign Up info </h2>
-<p>Pickup location: {{ member.current_signup.location.name }} <a href="{% url 'edit_location' member_id=member.id %}">Change Pickup Location</a></p>
+<h4>{{ member.current_signup.season }} Sign Up info </h4>
+<p>Pickup location: {{ member.current_signup.location.name }} <button class='save btn btn-outline-primary'><a href="{% url 'edit_location' member_id=member.id %}">Change Pickup Location</a></button>
 <p>Paid:
   {% if member.current_signup.paid %}
   Yes
@@ -16,10 +16,10 @@
   {% endif %}
 </p>
 {% else %}
-<h4>You're not signed up for the current season</h4>
+<p>You're not signed up for the current season</p>
 {% endif %}
 
-<h2>Contact info</h2>
+<h4>Contact info</h4>
 
 <h5>Address</h5>
 <p>{{ member.street_address}}</p>
@@ -31,6 +31,4 @@
 <h5>Email</h5>
 <p>{{ member.email }}</p>
 
-
-<a class="btn btn-default" href="{% url 'csa_member_edit' member_id=member.pk %}">Edit Info</a>
 {% endblock %}

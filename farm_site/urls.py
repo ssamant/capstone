@@ -11,6 +11,7 @@ urlpatterns = [
     url(r'^csa$', views.csa, name='csa'),
     url(r'^restaurants$', views.restaurants, name='restaurants'),
     url(r'^newsletter$', views.newsletter, name='newsletter'),
+    url(r'^contact$', views.contact, name='contact'),
 
     #csa signup
     url(r'^signup_member$', views.signup_member, name='signup_member'),
@@ -22,9 +23,10 @@ urlpatterns = [
     url(r'dashboard$', views.dashboard, name='dashboard'),
     url(r'dashboard/members$', views.members, name='members'),
     url(r'dashboard/members/(?P<member_id>\d+)$', views.member_info, name='member_info'),
-    url(r'dashboard/signups$', views.signups, name='signups'),
     url(r'dashboard/locations$', views.locations, name='locations'),
     url(r'dashboard/active$', views.active_signups, name='active_signups'),
+    url(r'dashboard/seasons$', views.all_seasons, name='all_seasons'),
+    url(r'dashboard/email$', views.email, name='email'),
 
     #csa members with login
     url(r'^(?P<member_id>\d+)$', views.csa_member_info, name='csa_member_info'),
