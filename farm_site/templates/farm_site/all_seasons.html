@@ -8,12 +8,30 @@
 
   <h2>All CSA Seasons</h2>
   <div class='table-responsive'>
-    <table>
+    <table class="table">
       <thead>
         <tr>
-          <th>Season</th>
-          <th>Name</th>
-          <th>Location</th>
+          <th ><div class="dropdown">
+
+
+            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Season
+              <span class="caret"></span></button>
+          <ul class="dropdown-menu">
+            {% for season in seasons %}
+              <li value={{ season.id }}>{{ season }}</li>
+            {% endfor %}
+           </ul>  </div></th>
+
+
+          <th><div class="dropdown">
+            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Location
+              <span class="caret"></span></button>
+            <ul class="dropdown-menu">
+          {% for location in locations %}
+            <li value={{ location.id }}>{{ location }}</li>
+          {% endfor %}
+           </ul></div></th>
+           <th>Name</th>
         </tr>
       </thead>
       <tbody>
@@ -21,12 +39,11 @@
         <tr>
           <td> {{signup.season}} </td>
           <td>
-            <a href='{% url 'member_info' member_id=signup.member.id %}'>{{ signup.member}} </a>
-          </td>
-          <td>
             {{ signup.location }}
           </td>
-
+          <td>
+            <a href='{% url 'member_info' member_id=signup.member.id %}'>{{ signup.member}} </a>
+          </td>
         </tr>
 
         {% endfor %}
