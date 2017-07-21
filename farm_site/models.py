@@ -17,6 +17,8 @@ class Location(models.Model):
     city = models.CharField(max_length=50)
     state = models.CharField(max_length=2)
     zipcode = models.CharField(max_length=5)
+    lat = models.CharField(max_length=25)
+    lng = models.CharField(max_length=25)
     current = models.BooleanField()
 
     def __str__(self):

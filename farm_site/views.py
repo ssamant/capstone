@@ -10,9 +10,6 @@ from django.contrib.auth.decorators import login_required, user_passes_test
 from django.forms import modelformset_factory
 import logging
 
-
-
-
 # general views
 def index(request):
     return render(request, 'farm_site/index.html', {})
@@ -43,6 +40,20 @@ def signup_member(request):
     return render(request, 'farm_site/signup_member.html', {'form': form})
 
 
+@login_required(redirect_field_name='returning_member')
+def signup_returning_member(request):
+    member = Member.objects.get(id=request.user.member_id)
+    if request.method == 'POST':
+        form = CreateMember(request.POST, instance=member)
+        if form.is_valid():
+            member = form.save()
+            request.session['member_id'] = member.id
+            return redirect('signup_csa')
+    else:
+        form = CreateMember(instance=member)
+    return render(request, 'farm_site/signup_member.html', {'form': form})
+
+
 def signup_csa(request):
     member = get_object_or_404(Member, pk=request.session['member_id'])
     if request.method == "POST":
@@ -61,23 +72,28 @@ def signup_csa(request):
 def signup_success(request):
     #need to get member object to put in User
     signup = get_object_or_404(Signup, pk=request.session['signup_id'])
-    if request.method == "POST":
-        form = CreateUser(request.POST)
-        if form.is_valid():
-            user = form.save(commit=False)
-            member = get_object_or_404(Member, pk=request.session['member_id'])
-            user.member = member
-            # check if user.save() would work instead
-            user = form.save()
-            group = Group.objects.get(name='Member')
-            user.groups.add(group)
-            return redirect('signup_done')
+    if request.user.is_authenticated:
+        return render(request, 'farm_site/signup_success.html', {'signup': signup })
     else:
-        form = CreateUser(initial={'email':signup.member.email})
+        if request.method == "POST":
+            form = CreateUser(request.POST)
+            if form.is_valid():
+                user = form.save(commit=False)
+                member = get_object_or_404(Member, pk=request.session['member_id'])
+                user.member = member
+                # check if user.save() would work instead
+                user = form.save()
+                group = Group.objects.get(name='Member')
+                user.groups.add(group)
+                request.session['user_email'] = user.email
+                return redirect('signup_done')
+        else:
+            form = CreateUser(initial={'email':signup.member.email})
     return render(request, 'farm_site/signup_success.html', {'signup': signup, 'form': form})
 
 def signup_done(request):
-    return render(request, 'farm_site/signup_done.html', {})
+    email = request.session['user_email']
+    return render(request, 'farm_site/signup_done.html', {'email' : email})
 
 
 
@@ -98,6 +114,7 @@ def csa_member_edit(request, member_id):
             print(form)
             if form.is_valid():
                 member = form.save()
+                messages.success(request, 'Your member information has been updated')
                 return redirect('farm_site/csa_member_info.html')
         else:
             form = CreateMember(instance=member)
@@ -116,6 +133,7 @@ def edit_location(request, member_id):
                 print(form.cleaned_data["location"])
                 signup.location = Location.objects.get(name=form.cleaned_data["location"])
                 signup.save()
+                messages.success(request, 'Your pickup location has been updated')
                 return redirect('csa_member_info', member_id=member_id)
         else:
             form = EditLocation(instance=signup)
@@ -184,6 +202,10 @@ def active_signups(request):
                         signup = get_object_or_404(Signup, pk=form.instance.pk)
                         signup.paid = True
                         signup.save()
+                        formset = SignupPaidFormSet(queryset=active)
+                        signups = zip(active,formset)
+                        messages.success(request, 'Signups marked as paid')
+                        return render(request, 'farm_site/active_signups.html', {'signups': signups, 'formset': formset})
 
 
     #once paid signups have been processed, clear the form and re-render page

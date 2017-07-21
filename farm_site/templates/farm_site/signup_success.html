@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block content %}
-<h3>Hooray! You have signed up for the {{ signup.season.year }} CSA season.</h3>
+<h3>Thank You! You have signed up for the {{ signup.season.year }} CSA season.</h3>
 <h4>See the details below. We will confirm your sign up and send an email in the next few days.</h4>
 <p>Name: {{ signup.member.first_name }} {{ signup.member.last_name }}</p>
 <p>Pick-up location: {{ signup.location.name }}</p>
@@ -13,6 +13,7 @@
 <p>Eggs: {{ signup.eggs }}</p>
 <p>Payment method: {{ signup.payment }}</p>
 
+{% if user.is_anonymous %}
 <h3>Create an account</h3>
 <p>Set up a user profile so you don't have re-enter your information next year! Having a user profile also makes it easier for you to log in and change your pickup location and see your history.</p>
 <p>We recommend using your email address as your username. </p>
@@ -21,4 +22,5 @@
   {{ form.as_p }}
   <button type='submit' class='save btn btn-outline-primary'>Create Account</button>
 </form>
+{% endif %}
 {% endblock %}
