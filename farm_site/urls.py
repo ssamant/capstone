@@ -19,6 +19,7 @@ urlpatterns = [
     url(r'^signup_csa$', views.signup_csa, name='signup_csa'),
     url(r'^signup_success$', views.signup_success, name='signup_success'),
     url(r'^signup_done$', views.signup_done, name='signup_done'),
+    url(r'^signup_error$', views.signup_error, name='signup_error'),
 
     #farmers
     url(r'dashboard$', views.dashboard, name='dashboard'),

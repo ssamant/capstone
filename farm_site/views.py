@@ -58,16 +58,24 @@ def signup_csa(request):
     member = get_object_or_404(Member, pk=request.session['member_id'])
     if request.method == "POST":
         form = CreateSignup(request.POST)
+
         if form.is_valid():
             signup = form.save(commit=False)
             signup.member = member
             signup.season = Season.objects.get(current_season=True)
-            signup.save()
-            request.session['signup_id'] = signup.id
-            return redirect('signup_success')
+            if request.user.is_authenticated and request.user.member.signup_set.filter(season__current_season=True).exists():
+                #check if user has a signup for this season
+                return redirect('signup_error')
+            else:
+                signup.save()
+                request.session['signup_id'] = signup.id
+                return redirect('signup_success')
     else:
         form = CreateSignup()
     return render(request, 'farm_site/signup_csa.html', {'form': form})
+
+def signup_error(request):
+    return render(request, 'farm_site/signup_error.html')
 
 def signup_success(request):
     #need to get member object to put in User
