@@ -12,3 +12,8 @@ db.sqlite3
 db.postgresql
 .DS_STORE
 locations.json
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
