@@ -11,3 +11,4 @@ capstone_product_plan.md
 db.sqlite3
 db.postgresql
 .DS_STORE
+locations.json

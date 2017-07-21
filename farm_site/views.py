@@ -123,7 +123,7 @@ def csa_member_edit(request, member_id):
             if form.is_valid():
                 member = form.save()
                 messages.success(request, 'Your member information has been updated')
-                return redirect('farm_site/csa_member_info.html')
+                return redirect('csa_member_info', member_id=member.id)
         else:
             form = CreateMember(instance=member)
             return render(request, 'farm_site/csa_member_edit.html', {'form': form})

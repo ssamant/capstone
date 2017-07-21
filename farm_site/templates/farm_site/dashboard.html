@@ -1,9 +1,23 @@
 {% extends 'farm_site/base.html' %}
+{% load easy_maps_tags %}
+
 
 {% block dashboardnav %}
   {% include 'farm_site/dashboard_nav.html' %}
 {% endblock %}
 
 {% block content %}
-<h4> NOTICE ME</h4>
+<h4>Hello. </h4>
+
+<h5>Process Signups</h5>
+<button type='submit' class='save btn btn-outline-primary'><a href='{% url 'active_signups' %}'>Signups</a></button>
+
+<h5>Manage Locations</h5>
+<p>Remove or add locations for the current season</p>
+<button type='submit' class='save btn btn-outline-primary'><a href='{% url 'locations' %}'>Locations</a></button>
+
+{% easy_map "Los Angeles, CA" 300 400 using "easy_maps/map.html" %}
+
+
+
 {% endblock %}
