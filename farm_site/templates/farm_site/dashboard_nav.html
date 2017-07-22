@@ -6,22 +6,22 @@
   </button>
 
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
+  <div>
+    <ul class="nav nav-tabs">
       <li class="nav-item">
-        <a class='btn' href='{% url 'active_signups' %}'>Process Signups</a>
+        <a class='nav-link active' href='{% url 'active_signups' %}'>Process Signups</a>
       </li>
-      <li class="nav-item">
-        <a class='btn' href='{% url 'members' %}'>Current Season<span class="sr-only">(current)</span></a>
+      <li class='nav-item'>
+        <a class='nav-link' href='{% url 'members' %}'>Current Season<span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item">
-        <a class='btn' href='{% url 'locations' %}'>Current Season Locations<span class="sr-only">(current)</span></a>
+      <li class='nav-item'>
+        <a class='nav-link' href='{% url 'locations' %}'>Current Season Locations<span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item">
-        <a class="btn" href="{% url 'all_seasons' %}"><span class="sr-only">(current)</span>All Seasons</a>
+      <li class='nav-item'>
+        <a class='nav-link' href="{% url 'all_seasons' %}"><span class="sr-only">(current)</span>All Seasons</a>
       </li>
-      <li class="nav-item">
-        <a class="btn" href="{% url 'email' %}"><span class="sr-only">(current)</span>Email Members</a>
+      <li class='nav-item'>
+        <a class='nav-link' href="{% url 'email' %}"><span class="sr-only">(current)</span>Email Members</a>
       </li>
     </ul>
 
