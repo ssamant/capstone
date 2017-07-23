@@ -23,10 +23,11 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+logging.basicConfig(level=logging.DEBUG)
 
+ALLOWED_HOSTS = ['localhost', '.elasticbeanstalk.com']
 
 # Application definition
 
@@ -80,7 +81,7 @@ WSGI_APPLICATION = 'localroots.wsgi.application'
 if 'RDS_DB_NAME' in os.environ:
     DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'ENGINE': 'django.db.backends.postgresql',
             'NAME': os.environ['RDS_DB_NAME'],
             'USER': os.environ['RDS_USERNAME'],
             'PASSWORD': os.environ['RDS_PASSWORD'],
@@ -100,6 +101,10 @@ else:
         }
     }
 
+
+FIXTURE_DIRS = (
+    'path/to/myapp/fixtures'
+)
 
 AUTH_USER_MODEL = 'farm_site.User'
 
