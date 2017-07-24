@@ -2,50 +2,39 @@
 
 
 {% block content %}
-    <div id='about'>
-      <h2>About</h2>
-      <p>
-        Lovelace Farm is a family-run vegetable farm in the Snoqualmie river valley, about 20 miles outside of Seattle. Ada and Grace, along with a small crew of workers and apprentices, grow about ten acres of vegetables, which we sell at Seattle-area farmers markets, through our Community Supported Agriculture subscription program, and to many fine restaurants.
-      </p>
-      <h4><a href='{% url 'about' %}'>Learn More</a></h4>
-    </div>
-    <div id='csa'>
-      <h2>CSA</h2>
-      <p>
-        2017	is	our	eleventh season farming	and	offering	our	popular	CSA	program.	A	wide	variety	of	crops	thrive	in	our	mild	climate	and	world-class	soil	and we grow	more	than	50	different	vegetables	and	herbs.	CSA	subscribers	receive	a	box	of	freshly harvested	vegetables	once	a	week	during	the	growing season.	All	produce	is	grown	by	us,	here	on our	farm.
-      </p>
-      <h4><a href='{% url 'csa' %}'>Learn More and Sign Up</a></h4>
-    </div>
-    <div id='find-us'>
-      <h2>Where to Find Us</h2>
-      <h3>Farm Stand</h3>
-      <p>Our honor-system farmstand is located at 262nd Ave NE, just off 124th St.</br>Open daily, 9 AM – Dusk</br>Cash or check</br>
-      <p>Now featuring Organic fruit from the Okanogan Producers Marketing Cooperative!</p>
-      <div id='map'></div>
-      <script>
-      function initMap() {
+<div class="row text-center index_content">
 
-        var farmstand = {lat: 47.708, lng: -121.989 };
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 14,
-          center: farmstand
-        });
-        var marker = new google.maps.Marker({
-          position: farmstand,
-          map: map
-        });
-      }
-    </script>
 
-      <script async defer
-          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANwCW4R0nqW8qDufj_dkYAm9gEUO6J2JU&callback=initMap">
-      </script>
-      <h3>Broadway Farmers Market</h3>
-      <p>Sundays from 11-3</br>This market is open year-round Our last 2016 market day will be November 20th</br>Broadway and Pine</p>
+    <div class='image_container col col-md-6'>
+      <a href='{% url 'csa' %}'><img class="image" src="../static/assets/farm_pic_csa.jpeg" alt="csa"></img>
+      <div class="middle">
+        <div class="overlay_text"><h2>Our CSA</h2></div>
+      </div></a>
     </div>
-    <div id='restaurants'>
-      <h2>Restaurants</h2>
-      <p>We are proud to supply numerous wonderful locally-owned restaurants. By supporting these restaurants, you help to build a strong local food system.</p>
-      <h4>Chefs: <a href='{% url 'restaurants' %}'>sign up for our weekly sheet</a></h4>
+
+    <div class='image_container col col-md-6'>
+      <a href='{% url 'find_us' %}'><img class="image" src="../static/assets/farm_pic_stand.jpg" alt="csa"></img>
+      <div class="middle">
+        <div class="overlay_text"><h2>Find Us</h2></div>
+      </div></a>
     </div>
+
+
+    <div class='image_container col col-md-6'>
+      <a href='{% url 'about' %}'><img class="image" src="../static/assets/farm_pic_fields.jpg" alt="about_us"></img>
+      <div class="middle">
+        <div class="overlay_text"><h2>About</h2></div>
+      </div></a>
+    </div>
+
+
+    <div class='image_container col col-md-6'>
+      <a href='{% url 'restaurants' %}'><img class="image" src="../static/assets/farm_pic_fennel.jpg" alt="restaurants"></img>
+      <div class="middle">
+        <div class="overlay_text"><h2>Restaurants</h2></div>
+      </div></a>
+    </div>
+
+</div>
+
 {% endblock %}

@@ -1,5 +1,9 @@
 {% extends 'farm_site/base.html' %}
 
 {% block content %}
-<h2>Restaurants</h2>
+<div id='restaurants'>
+  <h2>Restaurants</h2>
+  <p>We are proud to supply numerous wonderful locally-owned restaurants. By supporting these restaurants, you help to build a strong local food system.</p>
+  <h4>Chefs: <a href='{% url 'restaurants' %}'>sign up for our weekly sheet</a></h4>
+</div>
 {% endblock %}

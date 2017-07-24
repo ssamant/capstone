@@ -3,6 +3,7 @@ from django.utils import timezone
 from django.db.models import Q
 from .models import Member, Location, Signup, Season
 from .forms import CreateMember, CreateSignup, CreateUser, SignupPaid, EditLocation, ContactForm
+from .tables import SignupTable
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import Group
@@ -26,6 +27,8 @@ def restaurants(request):
 def contact(request):
     return render(request, 'farm_site/contact.html', {})
 
+def find_us(request):
+    return render(request, 'farm_site/find_us.html', {})
 #sign up for a csa
 def signup_member(request):
     if request.method == 'POST':
@@ -224,8 +227,8 @@ def active_signups(request):
 
 @login_required(redirect_field_name='index')
 @user_passes_test(is_farmer, login_url='index')
-def all_seasons(request):
-    signups = Signup.objects.all()
+def all_seasons(request, season_id):
+    signups = SignupTable(Signup.objects.all())
     seasons = Season.objects.all()
     locations = Location.objects.all()
     return render(request, 'farm_site/all_seasons.html', {'signups': signups, 'seasons': seasons, 'locations':locations})

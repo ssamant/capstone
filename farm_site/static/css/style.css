@@ -11,13 +11,23 @@ body {
   border-width: thin;
 }
 
+
+.index_content {
+	padding: 2% 10%;
+}
+
 #header h1 {
   text-align: center;
 }
 
 #login {
 	text-align: right;
+	padding: 8px 24px;
 }
+
+
+
+
 #main {
 	padding:0 2% 100px 2% ; /* Height of the footer element */
 }
@@ -90,4 +100,48 @@ a:hover, a:active, li.active {
 #map {
 	height: 200px;
 	width: 30%;
+}
+
+.image_container {
+	width: 450px;
+	height: 450px;
+	position: relative;
+	padding: 25px;
+
+}
+
+.image {
+    opacity: 1;
+		width: 400px;
+		height: 400px;
+		display: block;
+		transition: .5s ease;
+		backface-visibility: hidden;
+		border-style: solid;
+		border-width: thin;
+}
+
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%)
+}
+
+.image_container:hover .image {
+  opacity: 0.3;
+}
+
+.image_container:hover .middle {
+  opacity: 1;
+}
+
+.overlay_text {
+	color: black;
+  font-size: 24px;
+  padding: 16px 32px;
 }

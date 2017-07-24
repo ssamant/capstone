@@ -7,18 +7,18 @@
 
 
   <div>
-    <ul class="nav nav-tabs">
+    <ul class="dashboard nav nav-tabs">
       <li class="nav-item">
-        <a class='nav-link active' href='{% url 'active_signups' %}'>Process Signups</a>
+        <a class='{% if request.resolver_match.url_name == "active_signups" %}active{% endif %} nav-link' href='{% url 'active_signups' %}'>Process Signups</a>
       </li>
       <li class='nav-item'>
-        <a class='nav-link' href='{% url 'members' %}'>Current Season<span class="sr-only">(current)</span></a>
+        <a class='{% if request.resolver_match.url_name == "members" %}active{% endif %} nav-link' href='{% url 'members' %}'>Current Season<span class="sr-only">(current)</span></a>
       </li>
       <li class='nav-item'>
-        <a class='nav-link' href='{% url 'locations' %}'>Current Season Locations<span class="sr-only">(current)</span></a>
+        <a class='{% if request.resolver_match.url_name == "locations" %}active{% endif %} nav-link' href='{% url 'locations' %}'>Current Season Locations<span class="sr-only">(current)</span></a>
       </li>
       <li class='nav-item'>
-        <a class='nav-link' href="{% url 'all_seasons' %}"><span class="sr-only">(current)</span>All Seasons</a>
+        <a class='{% if request.resolver_match.url_name == "all_seasons" %}active{% endif %} nav-link' href="{% url 'by_season' season_id=1 %}"><span class="sr-only">(current)</span>All Seasons</a>
       </li>
       <li class='nav-item'>
         <a class='nav-link' href="{% url 'email' %}"><span class="sr-only">(current)</span>Email Members</a>

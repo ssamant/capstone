@@ -1,54 +1,31 @@
 {% extends 'farm_site/base.html' %}
+{% load custom_tags %}
+{% load render_table from django_tables2 %}
 
 {% block dashboardnav %}
   {% include 'farm_site/dashboard_nav.html' %}
 {% endblock %}
 
 {% block content %}
-
-  <h2>All CSA Seasons</h2>
-  <div class='table-responsive'>
-    <table class="table">
-      <thead>
-        <tr>
-          <th ><div class="dropdown">
-
-
-            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Season
-              <span class="caret"></span></button>
-          <ul class="dropdown-menu">
-            {% for season in seasons %}
-              <li value={{ season.id }}>{{ season }}</li>
-            {% endfor %}
-           </ul>  </div></th>
-
-
-          <th><div class="dropdown">
-            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Location
-              <span class="caret"></span></button>
-            <ul class="dropdown-menu">
-          {% for location in locations %}
-            <li value={{ location.id }}>{{ location }}</li>
-          {% endfor %}
-           </ul></div></th>
-           <th>Name</th>
-        </tr>
-      </thead>
-      <tbody>
-        {% for signup in signups %}
-        <tr>
-          <td> {{signup.season}} </td>
-          <td>
-            {{ signup.location }}
-          </td>
-          <td>
-            <a href='{% url 'member_info' member_id=signup.member.id %}'>{{ signup.member}} </a>
-          </td>
-        </tr>
+<table class="table">
+  <div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Season
+    </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        {% for season in seasons %}
+        <a class="dropdown-item" href='{% url 'by_season' season_id=season.id %}'>{{ season.id }}</a>
 
         {% endfor %}
-      </tbody>
-    </table>
+      </div>
   </div>
+</table>
+
+  <div class='table-responsive'>
+    {% render_table signups %}
+
+  </div>
+
+
 
 {% endblock %}

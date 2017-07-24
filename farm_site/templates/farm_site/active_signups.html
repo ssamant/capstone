@@ -1,4 +1,5 @@
 {% extends 'farm_site/base.html' %}
+{% load custom_tags %}
 
 {% block dashboardnav %}
 {% include 'farm_site/dashboard_nav.html' %}
@@ -9,7 +10,7 @@
 <h2>Manage {{ current_year }} CSA Signups</h2>
 
 <form method='POST' class='post-form'>
-  <table>
+  <table class="table">
     <thead>
       <tr>
         <th>Name</th>
@@ -21,8 +22,9 @@
     {{ formset.management_form}}
     {% for signup, form in signups %}
         <tr>
+          <a href='{% url 'member_info' member_id=signup.member.id %}'>
           <td>
-            {{ signup.member}}
+            <a href='{% url 'member_info' member_id=signup.member.id %}'>{{ signup.member}}</a>
           </td>
           <td>
             {{ signup.location}}
