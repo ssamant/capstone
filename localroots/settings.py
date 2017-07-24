@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'jquery',
-    'easy_maps',
     'django_tables2',
 
 ]
@@ -146,5 +145,3 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 LOGIN_REDIRECT_URL = 'index'
 LOGIN_URL = 'login'
 LOGOUT_REDIRECT_URL = 'index'
-
-EASY_MAPS_GOOGLE_MAPS_API_KEY = os.environ.get('EASY_MAPS_GOOGLE_MAPS_API_KEY')
