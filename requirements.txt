@@ -7,6 +7,7 @@ colorama==0.3.7
 Django==1.11.3
 django-filter==1.0.4
 django-jquery==3.1.0
+django-tables2==1.10.0
 docker-py==1.7.2
 dockerpty==0.4.1
 docopt==0.6.2
