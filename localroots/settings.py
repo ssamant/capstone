@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'jquery',
     'easy_maps',
+    'django_tables2',
 
 ]
 
