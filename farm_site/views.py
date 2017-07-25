@@ -203,7 +203,9 @@ def active_signups(request):
         print("method = Post")
 
         if (formset.is_valid()):
+            print(formset.as_table())
             for form in formset:
+                print(form.cleaned_data)
                 if form.is_valid() and not form.empty_permitted:
                     print("*****Form****")
                     print(form.cleaned_data["paid"])
@@ -213,10 +215,10 @@ def active_signups(request):
                         signup = get_object_or_404(Signup, pk=form.instance.pk)
                         signup.paid = True
                         signup.save()
-                        formset = SignupPaidFormSet(queryset=active)
-                        signups = zip(active,formset)
-                        messages.success(request, 'Signups marked as paid')
-                        return render(request, 'farm_site/active_signups.html', {'signups': signups, 'formset': formset})
+        formset = SignupPaidFormSet(queryset=active)
+        signups = zip(active,formset)
+        messages.success(request, 'Signups marked as paid')
+        return render(request, 'farm_site/active_signups.html', {'signups': signups, 'formset': formset})
 
 
     #once paid signups have been processed, clear the form and re-render page
