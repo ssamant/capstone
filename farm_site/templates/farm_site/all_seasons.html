@@ -9,14 +9,23 @@
 {% block content %}
 <table class="table">
   <div class="dropdown">
-    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <div class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       Season
-    </button>
+    </div>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
         {% for season in seasons %}
-        <a class="dropdown-item" href='{% url 'by_season' season_id=season.id %}'>{{ season.id }}</a>
+        <a class="dropdown-item" href='{% url 'by_season' season_id=season.id %}'>{{ season }}</a>
 
         {% endfor %}
+      </div>
+  </div>
+
+  <div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Location
+    </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+
       </div>
   </div>
 </table>

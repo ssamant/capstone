@@ -230,7 +230,10 @@ def active_signups(request):
 @login_required(redirect_field_name='index')
 @user_passes_test(is_farmer, login_url='index')
 def all_seasons(request, season_id):
-    signups = SignupTable(Signup.objects.all())
+    if season_id=="0":
+        signups = SignupTable(Signup.objects.all())
+    else:
+        signups = SignupTable(Signup.objects.filter(season_id=season_id))
     seasons = Season.objects.all()
     locations = Location.objects.all()
     return render(request, 'farm_site/all_seasons.html', {'signups': signups, 'seasons': seasons, 'locations':locations})
