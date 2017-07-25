@@ -1,0 +1,61 @@
+[
+  
+  {
+    "model": "farm_site.user",
+    "pk": 2,
+    "fields":
+      { "password": "cauliflower", "last_login": "2017-07-21T19:10:32.711Z",
+        "is_superuser": false,
+        "email": "lisa@simpson.com",
+        "created_date": "2017-07-17T20:46:43.300Z",
+        "member": 54,
+        "groups": [2],
+        "user_permissions": []
+        }
+      },
+
+  {
+    "model": "farm_site.user",
+      "pk": 3,
+      "fields":
+      {
+        "password": "cauliflower",
+        "last_login": "2017-07-20T18:54:27Z",
+        "is_superuser": false,
+        "email": "taylor@swift.com",
+        "created_date": "2017-07-20T18:54:10Z",
+        "member": 2,
+        "groups": [2],
+        "user_permissions": []
+        }
+      },
+
+  {
+    "model": "farm_site.user",
+    "pk": 4, "fields":
+    { "password": "cauliflower",
+      "last_login": "2017-07-20T18:55:11Z",
+      "is_superuser": false,
+      "email": "dory@dory.com",
+      "created_date": "2017-07-20T18:54:59Z",
+      "member": 6,
+      "groups": [2],
+      "user_permissions": []
+      }
+    },
+
+  {
+    "model": "farm_site.user",
+    "pk": 5,
+    "fields": {
+      "password": "cauliflower",
+      "last_login": "2017-07-20T18:55:35Z",
+      "is_superuser": false,
+      "email": "magnus@chase.com",
+      "created_date": "2017-07-20T18:55:26Z",
+      "member": 9,
+      "groups": [2],
+      "user_permissions": []
+      }
+    }
+]

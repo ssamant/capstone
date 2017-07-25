@@ -16,8 +16,6 @@
   <body>
     <div id="wrapper">
       <div id="header">
-
-        <h1><a href='{% url 'index' %}'>Lovelace Farm</a></h1>
         <div id='login'>
 
             {% if user.is_authenticated %}
@@ -29,18 +27,21 @@
 
 
         </div>
-      </div>
-      <div class="messages">
+        <h1><a href='{% url 'index' %}'>Lovelace Farm</a></h1>
+
+        <div class="messages">
 
 
-      {% if messages %}
-      <ul class="messages">
-        {% for message in messages %}
-        <li class="{{ message.tags }}">{{ message }}</li>
-        {% endfor %}
-      </ul>
-      {% endif %}
+        {% if messages %}
+        <ul class="messages">
+          {% for message in messages %}
+          <li class="{{ message.tags }}">{{ message }}</li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+        </div>
       </div>
+
 
 
 
