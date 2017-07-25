@@ -231,11 +231,11 @@ def active_signups(request):
 @user_passes_test(is_farmer, login_url='index')
 def all_seasons(request, season_id):
     if season_id=="0":
-        signups = SignupTable(Signup.objects.all())
+        signups = Signup.objects.all().order_by('season', 'location')
     else:
-        signups = SignupTable(Signup.objects.filter(season_id=season_id))
+        signups = Signup.objects.filter(season_id=season_id).order_by('season', 'location')
     seasons = Season.objects.all()
-    locations = Location.objects.all()
+    locations = Location.objects.all().order_by('name')
     return render(request, 'farm_site/all_seasons.html', {'signups': signups, 'seasons': seasons, 'locations':locations})
 
 
