@@ -18,7 +18,7 @@
         <a class='{% if request.resolver_match.url_name == "locations" %}active{% endif %} nav-link' href='{% url 'locations' %}'>Current Season Locations<span class="sr-only">(current)</span></a>
       </li>
       <li class='nav-item'>
-        <a class='{% if request.resolver_match.url_name == "by_season" %}active{% endif %} nav-link' href="{% url 'by_season' season_id=0 %}"><span class="sr-only">(current)</span>All Seasons</a>
+        <a class='{% if request.resolver_match.url_name == "all_seasons" %}active{% endif %} nav-link' href="{% url 'all_seasons' season_id="0" location_id="0" member_id="0" %}"><span class="sr-only">(current)</span>All Seasons</a>
       </li>
       <li class='nav-item'>
         <a class='{% if request.resolver_match.url_name == "email" %}active{% endif %} nav-link' href="{% url 'email' %}"><span class="sr-only">(current)</span>Email Members</a>

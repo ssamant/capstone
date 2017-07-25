@@ -7,7 +7,7 @@
 {% endblock %}
 
 {% block content %}
-<table class="table table-striped table-bordered">
+<table class="table table-striped">
   <thead>
     <th>
       <div class="dropdown">
@@ -16,7 +16,7 @@
         </button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
             {% for season in seasons %}
-            <a class="dropdown-item" href='{% url 'by_season' season_id=season.id %}'>{{ season }}</a>
+            <a class="dropdown-item" href='{% url 'all_seasons' season_id=season.id location_id=0 member_id=0 %}'>{{ season }}</a>
 
             {% endfor %}
           </div>
@@ -29,13 +29,22 @@
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
           {% for location in locations %}
-            <a class="dropdown-item" href='{% url 'by_season' season_id=location.id %}'>{{ location }}</a>
+            <a class="dropdown-item" href='{% url 'all_seasons' season_id=0 location_id=location.id member_id=0 %}'>{{ location }}</a>
           {% endfor %}
         </div>
       </div>
     </th>
     <th>
-      Member
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Member
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          {% for member in members %}
+            <a class="dropdown-item" href='{% url 'all_seasons' season_id=0 location_id=0 member_id=member.id %}'>{{ member }}</a>
+          {% endfor %}
+        </div>
+      </div>
     </th>
   </thead>
 

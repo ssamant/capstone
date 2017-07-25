@@ -1,7 +1,7 @@
 from django.shortcuts import render, render, get_object_or_404, redirect
 from django.utils import timezone
 from django.db.models import Q
-from .models import Member, Location, Signup, Season
+from .models import Member, Location, Signup, Season, User
 from .forms import CreateMember, CreateSignup, CreateUser, SignupPaid, EditLocation, ContactForm
 from .tables import SignupTable
 from django.contrib import messages
@@ -89,11 +89,15 @@ def signup_success(request):
         if request.method == "POST":
             form = CreateUser(request.POST)
             if form.is_valid():
-                user = form.save(commit=False)
+                email = form.cleaned_data['email']
+                password = form.cleaned_data['password1']
                 member = get_object_or_404(Member, pk=request.session['member_id'])
-                user.member = member
-                # check if user.save() would work instead
-                user = form.save()
+                user = User.objects.create(email=email, member=member )
+                if password:
+                    user.set_password(password)
+                else:
+                    user.set_unusable_password()
+                user.save()
                 group = Group.objects.get(name='Member')
                 user.groups.add(group)
                 request.session['user_email'] = user.email
@@ -229,14 +233,22 @@ def active_signups(request):
 
 @login_required(redirect_field_name='index')
 @user_passes_test(is_farmer, login_url='index')
-def all_seasons(request, season_id):
-    if season_id=="0":
-        signups = Signup.objects.all().order_by('season', 'location')
+def all_seasons(request, season_id, location_id, member_id):
+    print("*****")
+    print(season_id, location_id, member_id)
+    print((season_id=="0" and location_id=="0" and member_id=="0"))
+    if (season_id=="0" and location_id=="0" and member_id=="0"):
+        signups = Signup.objects.all().order_by('season', 'location', 'member__last_name')
+    elif location_id=="0" and member_id=="0":
+        signups = Signup.objects.filter(season_id=season_id).order_by('location', 'member__last_name')
+    elif member_id=="0":
+        signups = Signup.objects.filter(location_id=location_id).order_by('season', 'member__last_name')
     else:
-        signups = Signup.objects.filter(season_id=season_id).order_by('season', 'location')
+        signups = Signup.objects.filter(member_id=member_id).order_by('season')
     seasons = Season.objects.all()
     locations = Location.objects.all().order_by('name')
-    return render(request, 'farm_site/all_seasons.html', {'signups': signups, 'seasons': seasons, 'locations':locations})
+    members = Member.objects.all().order_by('last_name')
+    return render(request, 'farm_site/all_seasons.html', {'signups': signups, 'seasons': seasons, 'locations':locations, 'members':members})
 
 
 @login_required(redirect_field_name='index')

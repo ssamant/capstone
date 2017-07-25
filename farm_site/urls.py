@@ -28,8 +28,8 @@ urlpatterns = [
     url(r'dashboard/members/(?P<member_id>\d+)$', views.member_info, name='member_info'),
     url(r'dashboard/locations$', views.locations, name='locations'),
     url(r'dashboard/active$', views.active_signups, name='active_signups'),
+    url(r'dashboard/seasons/(?P<season_id>\d+)/(?P<location_id>\d+)/(?P<member_id>\d+)$', views.all_seasons, name='all_seasons'),
     url(r'dashboard/seasons$', views.all_seasons, name='all_seasons'),
-    url(r'dashboard/seasons/(?P<season_id>\d+)$', views.all_seasons, name='by_season'),
     url(r'dashboard/email$', views.email, name='email'),
 
     #csa members with login
