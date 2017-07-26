@@ -5,36 +5,47 @@
 {% endblock %}
 
 {% block content %}
-<h2>{{ member }}</h2>
-{% if current_signup %}
-  <h4>{{ current_signup.season }} Sign Up info </h4>
-  <p>Pickup location: {{ current_signup.location.name }}</p>
-  <p>Paid:
-    {% if current_signup.paid %}
-      Yes
-    {% else %}
-      No
-    {% endif %}
-  </p>
-{% else %}
-<h4>Not signed up for the current season</h4>
-{% endif %}
 
-<h4>Sign up history</h4>
-{% for signup in signups %}
-  <p>{{ signup.season.year }} {{ signup.location.name }}</p>
-{% endfor %}
+<div class='col-xs-10 col-sm-10 col-md-8 col-lg-4'>
+  <div class="card">
+    <div class="card-block ">
+      <div class="card-text">
+        <h4 >{{ member }}</h4>
+          {% if current_signup %}
+          <p>{{ current_signup.season }} Sign Up info </br>
+          Pickup location: {{ current_signup.location.name }}</br>
+          Paid:
+            {% if current_signup.paid %}
+              Yes
+            {% else %}
+              No
+            {% endif %}
+          </br>
+          {% else %}
+          <p>Not signed up for the current season</p>
+          {% endif %}
 
-<h4>Contact info</h4>
 
-<h5>Address</h5>
-<p>{{ member.street_address}}</p>
-<p>{{ member.city }} {{ member.state }} {{ member.zipcode}}</p>
 
-<h5>Phone</h5>
-<p>{{ member.phone }}</p>
+    <h4>Contact info</h4>
 
-<h5>Email</h5>
-<p>{{ member.email }}</p>
+    <p>Address</br>
+    {{ member.street_address}}</br>
+    {{ member.city }} {{ member.state }} {{ member.zipcode}}</p>
+
+    <p>Phone: {{ member.phone }}</p>
+
+    <p>Email: <a href="mailto:{{member.email}}" target="_blank">{{ member.email }}</a></p>
+
+    <h4>Sign up history</h4>
+    {% for signup in signups %}
+      <p>{{ signup.season.year }} {{ signup.location.name }}</p>
+    {% endfor %}
+
+</div>
+</div>
+</div>
+</div>
+
 
 {% endblock %}

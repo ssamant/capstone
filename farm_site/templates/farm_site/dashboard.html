@@ -23,7 +23,7 @@
   <tbody>
     {% for signup in new_signups%}
       <tr>
-        <td>{{ signup.member }}</td>
+        <td><a href='{% url 'member_info' member_id=signup.member.id %}'>{{ signup.member }}</a></td>
         <td>{{ signup.location }}</td>
         <td>{{ signup.box }}</td>
         <td>{{ signup.eggs }}</td>
