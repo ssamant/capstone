@@ -41,40 +41,40 @@ def signup_member(request):
             # add else to check if user is logged in
     else:
         form = CreateMember()
-    return render(request, 'farm_site/signup_member.html', {'form': form})
+        return render(request, 'farm_site/signup_member.html', {'form': form})
 
 
 @login_required
 # @login_required(redirect_field_name='returning_member')
 def signup_returning_member(request):
     member = Member.objects.get(id=request.user.member_id)
-    form = CreateMember(instance=member)
-    return render(request, 'farm_site/signup_member.html', {'form': form})
+    if member.signup_set.filter(season__current_season=True).exists():
+        #check if user has a signup for this season
+        return redirect('signup_error')
+    else:
+        form = CreateMember(instance=member)
+        return render(request, 'farm_site/signup_member.html', {'form': form})
 
 
 def signup_csa(request):
     member = get_object_or_404(Member, pk=request.session['member_id'])
     if request.method == "POST":
         form = CreateSignup(request.POST)
-
         if form.is_valid():
             signup = form.save(commit=False)
             signup.member = member
             signup.season = Season.objects.get(current_season=True)
             signup.created_date = timezone.now()
-            if request.user.is_authenticated and request.user.member.signup_set.filter(season__current_season=True).exists():
-                #check if user has a signup for this season
-                return redirect('signup_error')
-            else:
-                signup.save()
-                request.session['signup_id'] = signup.id
-                return redirect('signup_success')
+            signup.save()
+            request.session['signup_id'] = signup.id
+            return redirect('signup_success')
     else:
         form = CreateSignup()
     return render(request, 'farm_site/signup_csa.html', {'form': form})
 
 def signup_error(request):
-    return render(request, 'farm_site/signup_error.html')
+    signup = request.user.member.signup_set.get(season__current_season=True)
+    return render(request, 'farm_site/signup_error.html', {'signup': signup})
 
 def signup_success(request):
     #need to get member object to put in User

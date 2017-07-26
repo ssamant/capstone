@@ -4,5 +4,29 @@
 
 
 {% block content %}
-<h4>Our records show that you have already signed up for a CSA this season.</h4>
+<div class="row">
+  <h4>CSA Signup</h4>
+</div>
+<div class="row">
+<div class="col-xs-10 col-sm-10 col-md-3 col-lg-3">
+  {% block signupnav %}
+    {% include 'farm_site/signup_nav.html' %}
+  {% endblock %}
+</div>
+
+<div class='col-xs-10 col-sm-10 col-md-8 col-lg-4'>
+  <div class="card">
+    <div class="card-block ">
+      <h4 class="card-title">Already Signed Up</h4>
+      <div class="card-text">
+        <h4>Our records show that you've already signed up for a CSA this season. Thank you!</h4>
+        <p>See details below.</p>
+        <p>Name: {{ signup.member.first_name }} {{ signup.member.last_name }}</br>Pick-up location: {{ signup.location.name }}</br>
+        Box size: {{ signup.box }}</br>Eggs: {{ signup.eggs }}</br>Payment method: {{ signup.payment }}</br>Paid: {% if signup.paid %}Yes{% else %}No {% endif%}</p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
 {% endblock %}
