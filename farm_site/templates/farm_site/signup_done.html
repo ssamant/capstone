@@ -1,11 +1,12 @@
 {% extends 'farm_site/base.html' %}
 
 
+
+
+{% block content %}
 {% block signupnav %}
   {% include 'farm_site/signup_nav.html' %}
 {% endblock %}
-
-{% block content %}
 <h4>You have created a user account.</h4>
 <p>Your username is: {{ email }}. Now you can log in to view and edit your profile. Once your CSA signup is processed, you can see the status of your payment and change your pickup location.</p>
 {% endblock %}

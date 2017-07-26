@@ -2,17 +2,31 @@
 
 <h3>Sign up for our CSA</h3>
 
-{% block signupnav %}
-  {% include 'farm_site/signup_nav.html' %}
-{% endblock %}
+
 
 {% block content %}
+<div class="row">
+<div class="col-xs-10 col-sm-10 col-md-3 col-lg-3">
+  {% block signupnav %}
+    {% include 'farm_site/signup_nav.html' %}
+  {% endblock %}
+</div>
 
-<form method='POST' class='post-form'>
-  {% csrf_token %}
-  {{ form.as_p }}
-  <button type='submit' class='save btn btn-outline-success'>Sign Up!</button>
-</form>
+<div class='col-xs-10 col-sm-10 col-md-8 col-lg-4'>
+  <div class="card">
+    <div class="card-block ">
+      <h4 class="card-title">CSA Options</h4>
+      <div class="card-text">
+        <form method='POST' class='post-form'>
+          {% csrf_token %}
+          {{ form.as_p }}
+          <button type='submit' class='save btn btn-outline-success'>Save Profile Info</button>
+        </form>
 
+      </div>
+    </div>
+  </div>
+</div>
+</div>
 
 {% endblock %}

@@ -82,6 +82,20 @@ a:hover, a:active, li.active {
     text-decoration: none;
 }
 
+ul.signup {
+	list-style: none;
+
+
+}
+
+ul.signup li {
+	color: black;
+}
+
+li.active-step {
+	font-weight: bold; 
+}
+
 .social-media li  {
   list-style-type: none;
   padding-right: 3%;

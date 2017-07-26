@@ -1,6 +1,6 @@
-<nav class="breadcrumb">
-  <a class="breadcrumb-item" data-toggle='pill' href="{% url 'signup_member' %}">Member Info</a>
-  <a class="breadcrumb-item" data-toggle='pill' href="{% url 'signup_csa' %}">Select CSA</a>
-  <a class="breadcrumb-item" data-toggle='pill' href="{% url 'signup_success' %}">User Profile</a>
-  <span class="breadcrumb-item active">Bootstrap</span>
-</nav>
+<ul class='signup'>
+  <li class={% if request.resolver_match.url_name == "signup_member" %}"active-step"{% endif %}>Member Information</li>
+  <li class={% if request.resolver_match.url_name == "signup_csa" %}"active-step"{% endif %}>CSA Options</li>
+  <li class={% if request.resolver_match.url_name == "signup_done" %}"active-step"{% endif %}>Create User</li>
+  <li class={% if request.resolver_match.url_name == "signup_success" %}"active-step"{% endif %}>Done</li>
+</ul>

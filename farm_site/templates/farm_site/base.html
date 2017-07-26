@@ -81,12 +81,13 @@
       {% block dashboardnav %}
       {% endblock %}
 
-      {% block signupnav %}
-      {% endblock %}
+
 
       <div id="main">
         <div id="content">
           {% block content %}
+            {% block signupnav %}
+            {% endblock %}  
           {% endblock %}
         </div>
       </div>
