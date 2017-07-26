@@ -66,6 +66,7 @@ def signup_csa(request):
             signup = form.save(commit=False)
             signup.member = member
             signup.season = Season.objects.get(current_season=True)
+            signup.created_date = timezone.now()
             if request.user.is_authenticated and request.user.member.signup_set.filter(season__current_season=True).exists():
                 #check if user has a signup for this season
                 return redirect('signup_error')
@@ -164,7 +165,10 @@ def is_farmer(user):
 @login_required(redirect_field_name='index')
 @user_passes_test(is_farmer, login_url='index')
 def dashboard(request):
-    return render(request, 'farm_site/dashboard.html', {})
+    now = timezone.now()
+    earlier = now - timezone.timedelta(days=3)
+    new_signups = Signup.objects.filter(created_date__range=(earlier,now))
+    return render(request, 'farm_site/dashboard.html', {'new_signups': new_signups})
 
 @login_required(redirect_field_name='index')
 @user_passes_test(is_farmer, login_url='index')
@@ -239,16 +243,21 @@ def all_seasons(request, season_id, location_id, member_id):
     print((season_id=="0" and location_id=="0" and member_id=="0"))
     if (season_id=="0" and location_id=="0" and member_id=="0"):
         signups = Signup.objects.all().order_by('season', 'location', 'member__last_name')
+        selection = "All"
     elif location_id=="0" and member_id=="0":
         signups = Signup.objects.filter(season_id=season_id).order_by('location', 'member__last_name')
+        selection = Season.objects.get(id=season_id)
     elif member_id=="0":
         signups = Signup.objects.filter(location_id=location_id).order_by('season', 'member__last_name')
+        selection = Location.objects.get(id=location_id)
     else:
         signups = Signup.objects.filter(member_id=member_id).order_by('season')
+        selection = Member.objects.get(id=member_id)
+
     seasons = Season.objects.all()
     locations = Location.objects.all().order_by('name')
     members = Member.objects.all().order_by('last_name')
-    return render(request, 'farm_site/all_seasons.html', {'signups': signups, 'seasons': seasons, 'locations':locations, 'members':members})
+    return render(request, 'farm_site/all_seasons.html', {'signups': signups, 'seasons': seasons, 'locations':locations, 'members':members, 'selection':selection})
 
 
 @login_required(redirect_field_name='index')

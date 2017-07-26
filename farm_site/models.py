@@ -113,6 +113,9 @@ class User(AbstractBaseUser, PermissionsMixin):
     def get_long_name(self):
         return self.email
 
+def one_week_ago():
+    return timezone.now() - timezone.timedelta(days=7)
+
 class Signup(models.Model):
     BOX_CHOICES = (
         ('regular', 'Regular'),
@@ -138,6 +141,8 @@ class Signup(models.Model):
     box = models.CharField(max_length=7, choices=BOX_CHOICES, default='regular')
     eggs = models.CharField(max_length=10, choices=EGG_CHOICES, default='none')
     payment = models.CharField(max_length=20, choices=PAYMENT_CHOICES, default='check')
+    created_date = models.DateTimeField(
+            default=one_week_ago)
 
     def __str__(self):
         return "Name: %s, Season: %s, Location: %s" % (self.member, self.season, self.location)

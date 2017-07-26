@@ -5,8 +5,9 @@
 {% endblock %}
 
 {% block content %}
+<h2>{{ member }}</h2>
 {% if current_signup %}
-  <h2>{{ current_signup.season }} Sign Up info </h2>
+  <h4>{{ current_signup.season }} Sign Up info </h4>
   <p>Pickup location: {{ current_signup.location.name }}</p>
   <p>Paid:
     {% if current_signup.paid %}
@@ -19,12 +20,12 @@
 <h4>Not signed up for the current season</h4>
 {% endif %}
 
-<h2>Sign up history</h2>
+<h4>Sign up history</h4>
 {% for signup in signups %}
   <p>{{ signup.season.year }} {{ signup.location.name }}</p>
 {% endfor %}
 
-<h2>Contact info</h2>
+<h4>Contact info</h4>
 
 <h5>Address</h5>
 <p>{{ member.street_address}}</p>

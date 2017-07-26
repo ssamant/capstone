@@ -19,10 +19,10 @@
         <div id='login'>
 
             {% if user.is_authenticated %}
-              welcome, {{ user.member.first_name }} <button class='btn btn-outline-primary'><a href='logout'>logout</a></button>
-              <button class='btn btn-outline-primary'><a href='{% url 'csa_member_info' member_id=user.member_id %}'> profile</a></button>
+              welcome, {{ user.member.first_name }} <a class='btn btn-outline-success' role="button" href='logout'>logout</a>
+              <a class='btn btn-outline-success' role="button" href='{% url 'csa_member_info' member_id=user.member_id %}'> profile</a>
             {% else %}
-              CSA members, <button class='btn btn-outline-primary'><a href='/login'>log in</a></button>
+              CSA members <a class='btn btn-outline-success' role='button' href='/login'>log in</a></button>
             {% endif %}
 
 
@@ -53,21 +53,21 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-              <a class="nav-link" href='{% url 'csa' %}'>CSA</a>
+              <a class="{% if request.resolver_match.url_name == 'csa' %}active{% endif %} nav-link" href='{% url 'csa' %}'>CSA</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href='{% url 'find_us' %}'>Find Us</a>
+              <a class="{% if request.resolver_match.url_name == 'find_us' %}active{% endif %} nav-link" href='{% url 'find_us' %}'>Find Us</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href='{% url 'about' %}'>About <span class="sr-only">(current)</span></a>
+              <a class="{% if request.resolver_match.url_name == 'about' %}active{% endif %} nav-link" href='{% url 'about' %}'>About <span class="sr-only">(current)</span></a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" href='{% url 'restaurants' %}'>Restaurants</a>
+              <a class="{% if request.resolver_match.url_name == 'restaurants' %}active{% endif %} nav-link" href='{% url 'restaurants' %}'>Restaurants</a>
             </li>
             {% if user|is_farmer %}
             <li class="nav-item">
-              <a class="nav-link" href='{% url 'dashboard' %}'>Dashboard</a>
+              <a class="{% if request.resolver_match.url_name == 'dashboard' %}active{% endif %} nav-link" href='{% url 'dashboard' %}'>Dashboard</a>
             </li>
             {% endif %}
           </ul>

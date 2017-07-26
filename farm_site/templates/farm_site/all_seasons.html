@@ -7,6 +7,11 @@
 {% endblock %}
 
 {% block content %}
+<h2>{{ selection }} signup history </h2>
+<div class='row'>
+  <div class="col-xs-12 col-s-12 col-md-8 col-lg-8">
+
+
 <table class="table table-striped">
   <thead>
     <th>
@@ -53,14 +58,16 @@
       <tr>
         <td>  {{ signup.season }} </td>
         <td>{{ signup.location}}</td>
-        <td>{{ signup.member }}</td>
+        <td><a href='{% url 'member_info' member_id=signup.member.id %}'>
+        {{ signup.member }}</td>
       </tr>
       {% endfor %}
   </tbody>
 
 
 </table>
-
+</div>
+</div>
 
 
 {% endblock %}

@@ -7,17 +7,37 @@
 {% endblock %}
 
 {% block content %}
-<h4>Hello. </h4>
-
-<h5>Process Signups</h5>
-<button type='submit' class='save btn btn-outline-primary'><a href='{% url 'active_signups' %}'>Signups</a></button>
-
-<h5>Manage Locations</h5>
-<p>Remove or add locations for the current season</p>
-<button type='submit' class='save btn btn-outline-primary'><a href='{% url 'locations' %}'>Locations</a></button>
-
-
-
+<h4>New Signups</h4>
+{% if new_signups.count > 0 %}
+<div class='row'>
+  <div class="col-xs-12 col-s-12 col-md-8 col-lg-6">
+<table class="table">
+  <thead>
+    <tr>
+      <th>Member</th>
+      <th>Location</th>
+      <th>Box Size</th>
+      <th>Eggs</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for signup in new_signups%}
+      <tr>
+        <td>{{ signup.member }}</td>
+        <td>{{ signup.location }}</td>
+        <td>{{ signup.box }}</td>
+        <td>{{ signup.eggs }}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+</div>
+{% else %}
+  <div class='panel-body'>
+    <p>No recent signups</p>
+  </div>
+{% endif %}
 
 
 {% endblock %}
