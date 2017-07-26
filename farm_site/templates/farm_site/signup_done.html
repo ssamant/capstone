@@ -4,9 +4,29 @@
 
 
 {% block content %}
-{% block signupnav %}
-  {% include 'farm_site/signup_nav.html' %}
-{% endblock %}
-<h4>You have created a user account.</h4>
-<p>Your username is: {{ email }}. Now you can log in to view and edit your profile. Once your CSA signup is processed, you can see the status of your payment and change your pickup location.</p>
+<div class="row">
+  <h4>CSA Signup</h4>
+</div>
+<div class="row">
+<div class="col-xs-10 col-sm-10 col-md-3 col-lg-3">
+  {% block signupnav %}
+    {% include 'farm_site/signup_nav.html' %}
+  {% endblock %}
+</div>
+
+<div class='col-xs-10 col-sm-10 col-md-8 col-lg-4'>
+  <div class="card">
+    <div class="card-block ">
+
+      <div class="card-text">
+        <h4 class="card-title">Done!</h4>
+        <p>You've successfully created a user account.</p>
+        <p>Your username is: {{ email }}. Now you can log in to view and edit your profile. Once your CSA signup is processed, you can see the status of your payment and change your pickup location.</p>
+
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
 {% endblock %}
