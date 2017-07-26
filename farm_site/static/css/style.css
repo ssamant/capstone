@@ -84,16 +84,12 @@ a:hover, a:active, li.active {
 
 ul.signup {
 	list-style: none;
-
-
-}
-
-ul.signup li {
-	color: black;
+	padding: 10% 3% 3% 3%;
 }
 
 li.active-step {
-	font-weight: bold; 
+	color: #3D9970;
+	background: lightgray;
 }
 
 .social-media li  {
