@@ -1,48 +1,98 @@
 {% extends 'farm_site/base.html' %}
 
 {% block content %}
-<h2>CSA</h2>
-
+<h3>Community-Supported Agriculture</h3>
 <p>
-  2017	is	our	eleventh season farming	and	offering	our	popular	CSA	program.	A	wide	variety	of	crops	thrive	in	our	mild	climate	and	world-class	soil	and we grow	more	than	50	different	vegetables	and	herbs.	CSA	subscribers	receive	a	box	of	freshly harvested	vegetables	once	a	week	during	the	growing season.	All	produce	is	grown	by	us,	here	on our	farm.
-</p>
-<p>
-  We are now accepting new and returning members for our 2017 CSA season. This is our eleventh year farming and offering our well-loved CSA. All our produce is grown by us, here on our farm. We have pickup sites throughout Seattle, as well on-farm pickup. Our season is 26 weeks from June to November.
+  2017	is	our	11th season offering	our	popular	CSA	program.	We grow over 50 vegetables and herbs	in	our	mild	climate	and	world-class	soil.	CSA	subscribers	receive	a	box	of	freshly harvested	vegetables	once	a	week	during	the	growing season.
 </p>
 
-<h2>Why join our CSA?</h2>
-<p>
-  Happy CSA members: Each year, about 75% of our members re-join. Our year-end member survey consistently shows very high levels of satisfaction with our produce selection, quality, and value for price.
-</p>
 
-<p>
-  Longer CSA season: We’ve invested in storage infrastructure on our farm that enables us to provide diverse vegetable offerings all the way through November. For 2017 our CSA season is 26 weeks long, and we’re always trying new varieties and new storage methods to extend the season even further.
-</p>
-<p>
-  Everything is grown by us: We love to grow and eat a whole lot of different vegetables. We work hard to provide our CSA members with a wide variety of produce throughout the growing season. We do not buy in produce from other growers, but we do have some great…
-</p>
 
-<h2>What's in a box?</h2>
-<p>
-  We offer two box sizes. The	standard box	is	suitable	for	a	household	of	two	people	who	cook	at	home	three	to	four	nights	a	week.
-  The	standard	box	includes	7-10	items	(e.g.	1	head	lettuce,	1	bunch	kale,	1#	carrots)	each	week.
-  The	large	box	option		typically	has	one	or	two	additional	items	and/or	larger	quantities	of
-  staple	items	like	salad	greens,	potatoes,	squash,	broccoli	and	green	beans.
-</p>
-<h2>Price</h2>
-<p>Standard box: $570</p>
-<p>Large box: $715</p>
-<p>
-  This works out to just under $22 per box for the standard size and $27.50 for the large size. This works out to  about a 15% disocunt compared to buying these items at a grocery store or farmers market.
-</p>
-<p>When you sign up, you will have the option to mail us a check or choose one of various online options (like through your bank's online bill pay service).</p>
-<h2>Eggs</h2>
-<p>
-  We partner with Goose and Gander Farm to offer a half-dozen or dozen eggs as a 20-week-add-on.
-</p>
 <a class='btn btn-outline-success' role='button' href="{% url 'signup_member' %}" >Sign Up Today!</a>
 <a class='btn btn-outline-success' role='button' href="{% url 'returning_member' %}" >Returning Member</a>
 
-<h2>Locations</h2>
+<div class='row>'>
+  <div class="card col-xs-10 col-sm-10 col-md-6 col-lg-6">
+    <div class="card-block ">
+      <p class="card-title">Subscription Details</p>
+      <p class="card-text">Season: 26 weeks (June to November)</p>
+      <p class="card-text">Price: $500 for standard box, $700 for large box</p>
+      <p class="card-text">Option to add on a dozen or half-dozen eggs from Goose & Gander farm</p>
+      <p class="card-text">Pick up from 15 locations in the greater Seattle area</p>
+    </div>
+  </div>
+</div>
+
+
+
+<h4>Why join our CSA?</h4>
+
+<div class='row>'>
+  <div class="card col-xs-10 col-sm-10 col-md-6 col-lg-6">
+    <div class="card-block ">
+      <h4 class="card-title">Happy CSA members</h4>
+      <p class="card-text">Each year, about 75% of our members re-join. Our year-end member survey consistently shows very high levels of satisfaction with our produce selection, quality, and value for price.</p>
+      <h4 class="card-title">Longer CSA season</h4>
+      <p class="card-text">We’ve invested in storage infrastructure on our farm that enables us to provide diverse vegetable offerings all the way through November. For 2017 our CSA season is 26 weeks long, and we’re always trying new varieties and new storage methods to extend the season even further.</p>
+      <h4 class="card-title">We grow everything</h4>
+      <p class="card-text">We love to grow and eat a whole lot of different vegetables. We work hard to provide our CSA members with a wide variety of produce throughout the growing season. </p>
+
+    </div>
+  </div>
+</div>
+
+
+<h4>What's in a box?</h4>
+<p>
+  We offer two box sizes. The	standard box	is	suitable	for	a	household	of	two	people	who	cook	at	home	three	to	four	nights	a	week. The	large	box	option		typically	has	one	or	two	additional	items	and/or	larger	quantities	of staple	items	like	salad	greens,	potatoes,	squash,	broccoli	and	green	beans.
+</p>
+
+<div class='row'>
+  <div class='col-xs-10 col-sm-10 col-md-4 col-lg-3'>
+    <div class="card">
+      <div class="card-block ">
+        <h4 class="card-title">Sample June Box</h4>
+        <p class="card-text">1/2	#	salad	greens</br>radishes</br>kale</br>turnips</br>scallions</br>kohlrabi</br>2	heads	lettuce</br>basil</p>
+        <p>Large box add on: 1/2# snap peas, extra turnips</p>
+    </div>
+  </div>
+</div>
+
+<div class='col-xs-10 col-sm-10 col-md-6 col-lg-3'>
+  <div class="card">
+    <div class="card-block ">
+      <h4 class="card-title">Sample August Box</h4>
+      <p class="card-text">lettuce</br>basil</br>1# tomatoes </br>Savoy cabbage</br>cucumber (2)</br>carrots</br>beets</br>Swiss chard</p>
+      <p>Large box add on: 1/2# salad greens, extra cucumbers</p>
+    </div>
+  </div>
+</div>
+
+<div class='col-xs-10 col-sm-10 col-md-4 col-lg-3'>
+  <div class="card">
+    <div class="card-block ">
+      <h4 class="card-title">Sample October Box</h4>
+      <p class="card-text">2#	potatoes</br>kale</br>1 winter squash</br>lettuce</br>carrots</br>zucchini</br>bok choi</br>parsley</p>
+      <p>Large box add on: cauliflower, extra lettuce</p>
+    </div>
+  </div>
+</div>
+</div>
+
+<h4>Price</h4>
+
+<p>
+  Our pricing works out to just under $22 per box for the standard size and $27.50 for the large size. This works out to  about a 15% disocunt compared to buying these items at a grocery store or farmers market.
+</p>
+<p>When you sign up, you will have the option to mail us a check or choose one of various online options (like through your bank's online bill pay service).</p>
+
+
+
+<h4>Locations</h4>
 <div id="map-canvas"></div>
+
+<a class='btn btn-outline-success' role='button' href="{% url 'signup_member' %}" >Sign Up Today!</a>
+<a class='btn btn-outline-success' role='button' href="{% url 'returning_member' %}" >Returning Member</a>
+
+
 {% endblock %}
