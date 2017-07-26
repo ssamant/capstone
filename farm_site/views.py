@@ -10,6 +10,7 @@ from django.contrib.auth.models import Group
 from django.contrib.auth.decorators import login_required, user_passes_test
 from django.forms import modelformset_factory
 import logging
+from django.conf import settings
 
 # general views
 def index(request):
@@ -28,7 +29,9 @@ def contact(request):
     return render(request, 'farm_site/contact.html', {})
 
 def find_us(request):
-    return render(request, 'farm_site/find_us.html', {})
+    key = settings.GOOGLE_MAPS_KEY
+    print(key)
+    return render(request, 'farm_site/find_us.html', {'key':key})
 
 #sign up for a csa
 def signup_member(request):
@@ -57,6 +60,7 @@ def signup_returning_member(request):
 
 
 def signup_csa(request):
+    key = settings.GOOGLE_MAPS_KEY
     member = get_object_or_404(Member, pk=request.session['member_id'])
     if request.method == "POST":
         form = CreateSignup(request.POST)
@@ -70,7 +74,7 @@ def signup_csa(request):
             return redirect('signup_success')
     else:
         form = CreateSignup()
-    return render(request, 'farm_site/signup_csa.html', {'form': form})
+    return render(request, 'farm_site/signup_csa.html', {'form': form, 'key': key})
 
 def signup_error(request):
     signup = request.user.member.signup_set.get(season__current_season=True)
