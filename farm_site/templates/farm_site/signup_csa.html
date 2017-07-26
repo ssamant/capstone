@@ -30,6 +30,59 @@
     </div>
   </div>
 </div>
+<div class='col-xs-10 col-sm-10 col-md-8 col-lg-4'>
+  <div id="locations-map" class='map'></div>
 </div>
+
+
+</div>
+
+
+
+
+<script>
+function initMap() {
+
+var locationsmap = new google.maps.Map(document.getElementById('locations-map'), {
+  zoom: 10,
+  center: {lat: 47.6528282, lng: -122.204215}
+});
+
+var locations = [
+  {lat: 47.6266607, lng: -122.3254994 },
+  {lat: 47.5581985, lng: -122.287716 },
+  { lat: 47.7014848, lng: -121.9919785},
+  { lat: 47.6552893, lng: -122.4026392},
+  { lat: 47.6679742, lng: -122.2776743},
+  { lat: 47.7546913, lng: -122.1580373 },
+  { lat: 47.6225843, lng: -122.2994758 },
+  { lat: 47.5367305, lng: -122.2720953},
+  { lat: 47.638071, lng: -122.3594737},
+  { lat: 47.661188, lng: -122.3366958},
+  { lat: 47.6938491, lng: -122.3194076 },
+  { lat: 47.6826602, lng: -122.3572397 },
+  { lat: 47.6796855, lng: -122.3766637 },
+  { lat: 47.5600099, lng: -122.3892695 },
+  { lat: 47.6076631, lng: -122.3369395 },
+  { lat: 47.6324493, lng: -122.3124137 }
+];
+
+var markers = locations.map(function(location, i){
+  return new google.maps.Marker({
+    position: location,
+    map: locationsmap
+  })
+});
+
+
+}
+</script>
+
+
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCDHeZhg1nHe2SviS4T2XAH5r8JVA0Li5s&callback=initMap">
+</script>
+
+
 
 {% endblock %}
