@@ -29,6 +29,7 @@ def contact(request):
 
 def find_us(request):
     return render(request, 'farm_site/find_us.html', {})
+
 #sign up for a csa
 def signup_member(request):
     if request.method == 'POST':
@@ -43,17 +44,11 @@ def signup_member(request):
     return render(request, 'farm_site/signup_member.html', {'form': form})
 
 
-@login_required(redirect_field_name='returning_member')
+@login_required
+# @login_required(redirect_field_name='returning_member')
 def signup_returning_member(request):
     member = Member.objects.get(id=request.user.member_id)
-    if request.method == 'POST':
-        form = CreateMember(request.POST, instance=member)
-        if form.is_valid():
-            member = form.save()
-            request.session['member_id'] = member.id
-            return redirect('signup_csa')
-    else:
-        form = CreateMember(instance=member)
+    form = CreateMember(instance=member)
     return render(request, 'farm_site/signup_member.html', {'form': form})
 
 
@@ -113,7 +108,7 @@ def signup_done(request):
 
 
 
-@login_required(redirect_field_name='csa')
+@login_required
 def csa_member_info(request, member_id):
     if str(request.user.member_id) == member_id:
         member = get_object_or_404(Member, pk=member_id)
@@ -162,7 +157,7 @@ def edit_location(request, member_id):
 def is_farmer(user):
     return user.groups.filter(name='Farmer').exists()
 
-@login_required(redirect_field_name='index')
+@login_required
 @user_passes_test(is_farmer, login_url='index')
 def dashboard(request):
     now = timezone.now()
@@ -170,7 +165,7 @@ def dashboard(request):
     new_signups = Signup.objects.filter(created_date__range=(earlier,now))
     return render(request, 'farm_site/dashboard.html', {'new_signups': new_signups})
 
-@login_required(redirect_field_name='index')
+@login_required
 @user_passes_test(is_farmer, login_url='index')
 def members(request):
     current_signups = Signup.objects.filter(Q(season__current_season=True), Q(paid=True)).order_by("member__last_name")
@@ -178,7 +173,7 @@ def members(request):
 
     return render(request, 'farm_site/members.html', {'signups': current_signups, 'current_year': current_year})
 
-@login_required(redirect_field_name='index')
+@login_required
 @user_passes_test(is_farmer, login_url='index')
 def member_info(request, member_id):
     member = get_object_or_404(Member, pk=member_id)
@@ -187,7 +182,7 @@ def member_info(request, member_id):
 
     return render(request, 'farm_site/member_info.html', { 'member': member, 'signups': signups, 'current_signup': current_signup })
 
-@login_required(redirect_field_name='index')
+@login_required
 @user_passes_test(is_farmer, login_url='index')
 def locations(request):
     current_year = Season.objects.get(current_season=True).year
@@ -195,12 +190,12 @@ def locations(request):
     return render(request, 'farm_site/locations.html', {'locations': locations, 'current_year': current_year})
 
 
-@login_required(redirect_field_name='index')
+@login_required
 @user_passes_test(is_farmer, login_url='index')
 def newsletter(request):
     return render(request, 'farm_site/newsletter.html', {})
 
-@login_required(redirect_field_name='index')
+@login_required
 @user_passes_test(is_farmer, login_url='index')
 def active_signups(request):
     SignupPaidFormSet = modelformset_factory(Signup, form = SignupPaid)
@@ -235,7 +230,7 @@ def active_signups(request):
     signups = zip(active,formset)
     return render(request, 'farm_site/active_signups.html', {'signups': signups, 'formset': formset})
 
-@login_required(redirect_field_name='index')
+@login_required
 @user_passes_test(is_farmer, login_url='index')
 def all_seasons(request, season_id, location_id, member_id):
     print("*****")
@@ -260,7 +255,7 @@ def all_seasons(request, season_id, location_id, member_id):
     return render(request, 'farm_site/all_seasons.html', {'signups': signups, 'seasons': seasons, 'locations':locations, 'members':members, 'selection':selection})
 
 
-@login_required(redirect_field_name='index')
+@login_required
 @user_passes_test(is_farmer, login_url='index')
 def email(request):
     return render(request, 'farm_site/email.html', {})

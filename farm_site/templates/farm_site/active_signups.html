@@ -22,6 +22,7 @@
       <tr>
         <th>Name</th>
         <th>Location</th>
+        <th>Sign Up Date</th>
         <th>Paid</th>
       </tr>
     </thead>
@@ -29,13 +30,12 @@
     {{ formset.management_form}}
     {% for signup, form in signups %}
         <tr>
-          
+
           <td>
             <a href='{% url 'member_info' member_id=signup.member.id %}'>{{ signup.member}}</a>
           </td>
-          <td>
-            {{ signup.location}}
-          </td>
+          <td>  {{ signup.location}}</td>
+          <td>  {{ signup.created_date|date }}</td>
           <td>
             {{form.id}}
             {{form.paid}}

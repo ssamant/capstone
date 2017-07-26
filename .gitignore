@@ -11,7 +11,7 @@ capstone_product_plan.md
 db.sqlite3
 db.postgresql
 .DS_STORE
-locations_backup.json
+locations_backup.html
 
 # Elastic Beanstalk Files
 .elasticbeanstalk/*

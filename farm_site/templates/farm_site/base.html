@@ -20,7 +20,7 @@
         <div id='login'>
 
             {% if user.is_authenticated %}
-              welcome, {{ user.member.first_name }} <a class='btn btn-outline-success' role="button" href='logout'>logout</a>
+              welcome, {{ user.member.first_name }} <a class='btn btn-outline-success' role="button" href='/logout'>logout</a>
               <a class='btn btn-outline-success' role="button" href='{% url 'csa_member_info' member_id=user.member_id %}'> profile</a>
             {% else %}
               CSA members <a class='btn btn-outline-success' role='button' href='/login'>log in</a></button>
@@ -87,7 +87,7 @@
         <div id="content">
           {% block content %}
             {% block signupnav %}
-            {% endblock %}  
+            {% endblock %}
           {% endblock %}
         </div>
       </div>
