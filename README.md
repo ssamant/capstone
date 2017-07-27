@@ -33,3 +33,6 @@ python manage.py createsuperuser
 9. Start you local server: python manage.py runserver
 
 10. Point your browser to: http://127.0.0.1:8000/  
+
+#### Caveat emptor
+This is a student project -- be aware there are issues that need to be debugged and features that haven't been implemented. One big note: I encountered issues setting my environment variable and could resolve them on my machine, but you may encounter similar issues. 
