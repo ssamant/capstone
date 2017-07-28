@@ -18,3 +18,4 @@ locations_backup.html
 !.elasticbeanstalk/*.cfg.yml
 !.elasticbeanstalk/*.global.yml
 settings_dev.py
+reflections.md

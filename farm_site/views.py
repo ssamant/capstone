@@ -83,8 +83,17 @@ def signup_error(request):
 def signup_success(request):
     #need to get member object to put in User
     signup = get_object_or_404(Signup, pk=request.session['signup_id'])
+    total = 0
+    if (signup.box == "regular"):
+        total += 570
+    else:
+        total += 715
+    if (signup.eggs == "dozen"):
+        total+= 180
+    elif (signup.eggs == "half-dozen"):
+        total+= 105
     if request.user.is_authenticated:
-        return render(request, 'farm_site/signup_success.html', {'signup': signup })
+        return render(request, 'farm_site/signup_success.html', {'signup': signup,'total' : total })
     else:
         if request.method == "POST":
             form = CreateUser(request.POST)
@@ -104,7 +113,7 @@ def signup_success(request):
                 return redirect('signup_done')
         else:
             form = CreateUser(initial={'email':signup.member.email})
-    return render(request, 'farm_site/signup_success.html', {'signup': signup, 'form': form})
+    return render(request, 'farm_site/signup_success.html', {'signup': signup, 'form': form, 'total': total})
 
 def signup_done(request):
     email = request.session['user_email']

@@ -16,7 +16,7 @@ body {
 	padding: 2% 10%;
 }
 
-#header h1 {
+#header h1, #header p {
   text-align: center;
 }
 

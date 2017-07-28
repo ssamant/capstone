@@ -19,13 +19,24 @@
 <div class='col-xs-10 col-sm-10 col-md-8 col-lg-4'>
   <div class="card">
     <div class="card-block ">
-      <h4 class="card-title">Create User</h4>
+      <h4 class="card-title">Thank you!</h4>
       <div class="card-text">
-        <h4>Thank You! You have signed up for the {{ signup.season.year }} CSA season.</h4>
+        <h4>You have signed up for the {{ signup.season.year }} CSA season.</h4>
         <p>See details below. We'll confirm your sign up and send an email in the next few days.</p>
         <p>Name: {{ signup.member.first_name }} {{ signup.member.last_name }}</br>Pick-up location: {{ signup.location.name }}</br>
-        Box size: {{ signup.box }}</br>Eggs: {{ signup.eggs }}</br>Payment method: {{ signup.payment }}</p>
-        {% if user.is_anonymous %}
+        Box size: {{ signup.box }} </br>Eggs: {{ signup.eggs }}</br>Total due: ${{ total }}</br>Payment method: {{ signup.payment }}</p>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+{% if user.is_anonymous %}
+<div class='col-xs-10 col-sm-10 col-md-8 col-lg-4'>
+  <div class="card">
+    <div class="card-block ">
+      <h4 class="card-title">Create User</h4>
+      <div class="card-text">
           <p>Set up a user profile so you don't have re-enter your information next year! Having a user profile also makes it easier for you to log in and change your pickup location and see your history.</p>
           <p>We recommend using your email address as your username. </p>
           <form method='POST' class='post-form'>
@@ -33,11 +44,13 @@
             {{ form.as_p }}
             <button type='submit' class='save btn btn-outline-success'>Save Profile Info</button>
           </form>
-        {% endif %}
+
       </div>
     </div>
   </div>
 </div>
+  {% endif %}
+
 </div>
 
 
