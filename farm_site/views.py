@@ -176,6 +176,7 @@ def dashboard(request):
     now = timezone.now()
     earlier = now - timezone.timedelta(days=3)
     new_signups = Signup.objects.filter(created_date__range=(earlier,now))
+    new_signups.order_by('-created_date')
     return render(request, 'farm_site/dashboard.html', {'new_signups': new_signups})
 
 @login_required
